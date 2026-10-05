@@ -1,8 +1,8 @@
-# <a name="main"></a>C++ Core Guidelines
+# <a name="main"></a>Guide des bonnes pratiques essentielles du C++
 
 Jun 14, 2026
 
-Editors:
+Rédacteurs :
 
 * [Bjarne Stroustrup](https://www.stroustrup.com)
 * [Herb Sutter](https://herbsutter.com/)
