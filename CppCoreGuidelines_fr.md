@@ -7,16 +7,16 @@ Rédacteurs :
 * [Bjarne Stroustrup](https://www.stroustrup.com)
 * [Herb Sutter](https://herbsutter.com/)
 
-This is a living document under continuous improvement.
-Had it been an open-source (code) project, this would have been release 0.8.
-Copying, use, modification, and creation of derivative works from this project is licensed under an MIT-style license.
-Contributing to this project requires agreeing to a Contributor License. See the accompanying [LICENSE](https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE) file for details.
-We make this project available to "friendly users" to use, copy, modify, and derive from, hoping for constructive input.
+Ce document est un document vivant, en amélioration continue. 
+S'il s'agissait d'un projet open source de logiciel, il en serait actuellement à la version 0.8.
+La copie, l'utilisation, la modification et la création d'œuvres dérivées à partir de ce projet sont autorisées selon une licence de type MIT.
+Toute contribution à ce projet nécessite l'acceptation d'un accord de licence de contributeur (_Contributor License Agreement_). Consultez le fichier [LICENSE](https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE) fourni pour plus de détails.
+Nous mettons ce projet à la disposition d'utilisateurs bienveillants afin qu'ils puissent l'utiliser, le copier, le modifier et en créer des dérivés, dans l'espoir de recevoir des retours constructifs.
 
-Comments and suggestions for improvements are most welcome.
-We plan to modify and extend this document as our understanding improves and the language and the set of available libraries improve.
-When commenting, please note [the introduction](#s-introduction) that outlines our aims and general approach.
-The list of contributors is [here](#ss-ack).
+Les commentaires et suggestions d'amélioration sont les bienvenus.
+Nous prévoyons de modifier et d'enrichir ce document à mesure que notre compréhension progresse, que le langage évolue et que l'ensemble des bibliothèques disponibles s'améliore.
+Avant de formuler des commentaires, veuillez prendre connaissance de [l'introduction](#s-introduction), qui présente nos objectifs ainsi que notre approche générale.
+La liste des contributeurs est disponible [ici](#ss-ack).
 
 Problems:
 
