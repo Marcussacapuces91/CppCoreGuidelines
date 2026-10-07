@@ -1,3 +1,7 @@
+---
+title: Lignes directrices essentielles de C++
+---
+
 # <a name="main"></a>Lignes directrices essentielles de C++
 
 14 juin 2026
