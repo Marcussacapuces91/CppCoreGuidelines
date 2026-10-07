@@ -26,11 +26,12 @@ def slugify(title: str) -> str:
     """
     normalized = unicodedata.normalize("NFKD", title)
     normalized = normalized.encode("ascii", "ignore").decode("ascii")          # Only ascii char
-    print(normalized)    # "# <a name="main"></a>C++ Core Guidelines"
+    print(normalized, end="")    # "# <a name="main"></a>C++ Core Guidelines"
     try:
         _, _, normalized = normalized.split('"')                                   # Keep only after 2 x '"'
     except:
         pass
+    print(normalized)
     normalized = re.sub(r"[^a-zA-Z0-9\s-]", "", normalized).strip().lower()    # Suppress special char and turn low case
     normalized = re.sub(r"[\s-]+", "-", normalized)                            # Replace spaces by '-'
     return normalized or "section"
