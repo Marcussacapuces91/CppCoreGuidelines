@@ -19,14 +19,19 @@ current_title = None
 current_lines = []
 
 def slugify(title: str) -> str:
+    """
+    Normalize the given title.
+    :param title: Title to be normalized
+    :return: Normalized title
+    """
     normalized = unicodedata.normalize("NFKD", title)
-    normalized = normalized.encode("ascii", "ignore").decode("ascii")
-    normalized = re.sub(r"[^a-zA-Z0-9\s-]", "", normalized).strip().lower()
-    normalized = re.sub(r"[\s-]+", "-", normalized)
+    normalized = normalized.encode("ascii", "ignore").decode("ascii")          # Only ascii char
+    normalized = re.sub(r"[^a-zA-Z0-9\s-]", "", normalized).strip().lower()    # Suppress special char and turn low case
+    normalized = re.sub(r"[\s-]+", "-", normalized)                            # Replace spaces by '-'
     return normalized or "section"
 
 for line in lines:
-    match = header_re.match(line)
+    match = header_re.match(line)    # is it a header
     if match:
         if current_title is not None and current_lines:
             sections.append((current_title, current_lines))
