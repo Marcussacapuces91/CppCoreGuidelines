@@ -1,183 +1,183 @@
-# <a name="main"></a>C++ Core Guidelines
+# <a name="main"></a>Lignes directrices essentielles de C++
 
-Jun 14, 2026
+14 juin 2026
 
-Editors:
+Éditeurs :
 
 * [Bjarne Stroustrup](https://www.stroustrup.com)
 * [Herb Sutter](https://herbsutter.com/)
 
-This is a living document under continuous improvement.
-Had it been an open-source (code) project, this would have been release 0.8.
-Copying, use, modification, and creation of derivative works from this project is licensed under an MIT-style license.
-Contributing to this project requires agreeing to a Contributor License. See the accompanying [LICENSE](https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE) file for details.
-We make this project available to "friendly users" to use, copy, modify, and derive from, hoping for constructive input.
+Ceci est un document vivant, en amélioration continue.
+S'il s'agissait d'un projet open source (de code), ce serait la version 0.8.
+La copie, l'utilisation, la modification et la création d'œuvres dérivées de ce projet sont soumises à une licence de type MIT.
+Contribuer à ce projet exige l'acceptation d'une licence du contributeur. Voir le fichier joint [LICENSE](https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE) pour plus de détails.
+Nous mettons ce projet à disposition des « utilisateurs bienveillants » pour l'utiliser, le copier, le modifier et en dériver, dans l'espoir d'obtenir des retours constructifs.
 
-Comments and suggestions for improvements are most welcome.
-We plan to modify and extend this document as our understanding improves and the language and the set of available libraries improve.
-When commenting, please note [the introduction](#s-introduction) that outlines our aims and general approach.
-The list of contributors is [here](#ss-ack).
+Les commentaires et suggestions d'amélioration sont les bienvenus.
+Nous prévoyons de modifier et d'étendre ce document au fur et à mesure que notre compréhension s'améliore et que le langage ainsi que l'ensemble des bibliothèques disponibles progressent.
+Lors de vos commentaires, veuillez tenir compte de [l'introduction](#s-introduction), qui présente nos objectifs et notre approche générale.
+La liste des contributeurs est [ici](#ss-ack).
 
-Problems:
+Problèmes :
 
-* The sets of rules have not been completely checked for completeness, consistency, or enforceability.
-* Triple question marks (???) mark known missing information.
-* Update reference sections; many pre-C++11 sources are too old.
-* For a more-or-less up-to-date to-do list see: [To-do: Unclassified proto-rules](#s-unclassified).
+* Les ensembles de règles n'ont pas encore été vérifiés de manière exhaustive pour leur exhaustivité, leur cohérence ou leur applicabilité.
+* Les triples points d'interrogation (???) indiquent des informations connues manquantes.
+* Mettre à jour les sections de références ; de nombreuses sources antérieures à C++11 sont désormais trop anciennes.
+* Pour une liste de tâches à faire plus ou moins à jour, voir : [À faire : Proto-règles non classées](#s-unclassified).
 
-You can [read an explanation of the scope and structure of this Guide](#s-abstract) or just jump straight in:
+Vous pouvez [lire une explication sur la portée et la structure de ce guide](#s-abstract) ou passer directement à :
 
-* [In: Introduction](#s-introduction)
-* [P: Philosophy](#s-philosophy)
-* [I: Interfaces](#s-interfaces)
-* [F: Functions](#s-functions)
-* [C: Classes and class hierarchies](#s-class)
-* [Enum: Enumerations](#s-enum)
-* [R: Resource management](#s-resource)
-* [ES: Expressions and statements](#s-expr)
-* [Per: Performance](#s-performance)
-* [CP: Concurrency and parallelism](#s-concurrency)
-* [E: Error handling](#s-errors)
-* [Con: Constants and immutability](#s-const)
-* [T: Templates and generic programming](#s-templates)
-* [CPL: C-style programming](#s-cpl)
-* [SF: Source files](#s-source)
-* [SL: The Standard Library](#sl-the-standard-library)
+* [In : Introduction](#s-introduction)
+* [P : Philosophie](#s-philosophy)
+* [I : Interfaces](#s-interfaces)
+* [F : Fonctions](#s-functions)
+* [C : Classes et hiérarchies de classes](#s-class)
+* [Enum : Énumérations](#s-enum)
+* [R : Gestion des ressources](#s-resource)
+* [ES : Expressions et instructions](#s-expr)
+* [Per : Performance](#s-performance)
+* [CP : Concurrence et parallélisme](#s-concurrency)
+* [E : Gestion des erreurs](#s-errors)
+* [Con : Constantes et immuabilité](#s-const)
+* [T : Modèles et programmation générique](#s-templates)
+* [CPL : Programmation de style C](#s-cpl)
+* [SF : Fichiers sources](#s-source)
+* [SL : Bibliothèque standard](#sl-the-standard-library)
 
-Supporting sections:
+Sections de soutien :
 
-* [A: Architectural ideas](#s-a)
-* [NR: Non-Rules and myths](#s-not)
-* [RF: References](#s-references)
-* [Pro: Profiles](#s-profile)
-* [GSL: Guidelines support library](#s-gsl)
-* [NL: Naming and layout suggestions](#s-naming)
-* [FAQ: Answers to frequently asked questions](#s-faq)
-* [Appendix A: Libraries](#s-libraries)
-* [Appendix B: Modernizing code](#s-modernizing)
-* [Appendix C: Discussion](#s-discussion)
-* [Appendix D: Supporting tools](#s-tools)
-* [Glossary](#s-glossary)
-* [To-do: Unclassified proto-rules](#s-unclassified)
+* [A : Idées architecturales](#s-a)
+* [NR : Non-règles et mythes](#s-not)
+* [RF : Références](#s-references)
+* [Pro : Profils](#s-profile)
+* [GSL : Bibliothèque de support des directives](#s-gsl)
+* [NL : Suggestions de noms et de mise en page](#s-naming)
+* [FAQ : Réponses aux questions fréquemment posées](#s-faq)
+* [Appendice A : Bibliothèques](#s-libraries)
+* [Appendice B : Modernisation du code](#s-modernizing)
+* [Appendice C : Discussion](#s-discussion)
+* [Appendice D : Outils de support](#s-tools)
+* [Glossaire](#s-glossary)
+* [À faire : Proto-règles non classées](#s-unclassified)
 
-You can sample rules for specific language features:
+Vous pouvez consulter des règles sur des fonctionnalités linguistiques spécifiques :
 
-* assignment:
-[regular types](#rc-regular) --
-[prefer initialization](#rc-initialize) --
-[copy](#rc-copy-semantic) --
-[move](#rc-move-semantic) --
-[other operations](#rc-matched) --
-[default](#rc-eqdefault)
-* `class`:
-[data](#rc-org) --
+* affectation :
+[types réguliers](#rc-regular) --
+[préférer l'initialisation](#rc-initialize) --
+[copie](#rc-copy-semantic) --
+[déplacement](#rc-move-semantic) --
+[autres opérations](#rc-matched) --
+[par défaut](#rc-eqdefault)
+* `class` :
+[données](#rc-org) --
 [invariant](#rc-struct) --
-[members](#rc-member) --
-[helpers](#rc-helper) --
-[concrete types](#ss-concrete) --
-[ctors, =, and dtors](#s-ctor) --
-[hierarchy](#ss-hier) --
-[operators](#ss-overload)
-* `concept`:
-[rules](#ss-concepts) --
-[in generic programming](#rt-raise) --
-[template arguments](#rt-concepts) --
-[semantics](#rt-low)
-* constructor:
+[membres](#rc-member) --
+[assistants](#rc-helper) --
+[types concrets](#ss-concrete) --
+[constructeurs, = et destructeurs](#s-ctor) --
+[hiérarchie](#ss-hier) --
+[opérateurs](#ss-overload)
+* `concept` :
+[règles](#ss-concepts) --
+[dans la programmation générique](#rt-raise) --
+[arguments de modèles](#rt-concepts) --
+[sémantique](#rt-low)
+* constructeur :
 [invariant](#rc-struct) --
-[establish invariant](#rc-ctor) --
+[établir l'invariant](#rc-ctor) --
 [`throw`](#rc-throw) --
-[default](#rc-default0) --
-[not needed](#rc-default) --
+[par défaut](#rc-default0) --
+[non nécessaire](#rc-default) --
 [`explicit`](#rc-explicit) --
-[delegating](#rc-delegating) --
+[délégué](#rc-delegating) --
 [`virtual`](#rc-ctor-virtual)
-* derived `class`:
-[when to use](#rh-domain) --
-[as interface](#rh-abstract) --
-[destructors](#rh-dtor) --
-[copy](#rh-copy) --
-[getters and setters](#rh-get) --
-[multiple inheritance](#rh-mi-interface) --
-[overloading](#rh-using) --
-[slicing](#rc-copy-virtual) --
+* classe dérivée :
+[quand l'utiliser](#rh-domain) --
+[comme interface](#rh-abstract) --
+[destructeurs](#rh-dtor) --
+[copie](#rh-copy) --
+[accesseurs](#rh-get) --
+[héritage multiple](#rh-mi-interface) --
+[surcharge](#rh-using) --
+[troncature](#rc-copy-virtual) --
 [`dynamic_cast`](#rh-dynamic_cast)
-* destructor:
-[and constructors](#rc-matched) --
-[when needed?](#rc-dtor) --
-[must not fail](#rc-dtor-fail)
-* exception:
-[errors](#s-errors) --
+* destructeur :
+[et constructeurs](#rc-matched) --
+[quand est-il nécessaire ?](#rc-dtor) --
+[ne doit pas échouer](#rc-dtor-fail)
+* exception :
+[erreurs](#s-errors) --
 [`throw`](#re-throw) --
-[for errors only](#re-errors) --
+[pour les erreurs uniquement](#re-errors) --
 [`noexcept`](#re-noexcept) --
-[minimize `try`](#re-catch) --
-[what if no exceptions?](#re-no-throw-codes)
-* `for`:
-[range-for and for](#res-for-range) --
-[for and while](#res-for-while) --
-[for-initializer](#res-for-init) --
-[empty body](#res-empty) --
-[loop variable](#res-loop-counter) --
-[loop variable type ???](#res-???)
-* function:
-[naming](#rf-package) --
-[single operation](#rf-logical) --
-[no throw](#rf-noexcept) --
+[minimiser `try`](#re-catch) --
+[et si pas d'exceptions ?](#re-no-throw-codes)
+* `for` :
+[range-for et for](#res-for-range) --
+[for et while](#res-for-while) --
+[initialiseur de for](#res-for-init) --
+[corps vide](#res-empty) --
+[variable de boucle](#res-loop-counter) --
+[type de variable de boucle ???](#res-??? )
+* fonction :
+[nommage](#rf-package) --
+[opération unique](#rf-logical) --
+[sans exception](#rf-noexcept) --
 [arguments](#rf-smart) --
-[argument passing](#rf-conventional) --
-[multiple return values](#rf-out-multi) --
-[pointers](#rf-return-ptr) --
+[passage des arguments](#rf-conventional) --
+[valeurs de retour multiples](#rf-out-multi) --
+[pointeurs](#rf-return-ptr) --
 [lambdas](#rf-capture-vs-overload)
-* `inline`:
-[small functions](#rf-inline) --
-[in headers](#rs-inline)
-* initialization:
-[always](#res-always) --
-[prefer `{}`](#res-list) --
+* `inline` :
+[petites fonctions](#rf-inline) --
+[dans les en-têtes](#rs-inline)
+* initialisation :
+[toujours](#res-always) --
+[préférer `{}`](#res-list) --
 [lambdas](#res-lambda-init) --
-[default member initializers](#rc-in-class-initializer) --
-[class members](#rc-initialize) --
-[factory functions](#rc-factory)
-* lambda expression:
-[when to use](#ss-lambdas)
-* operator:
-[conventional](#ro-conventional) --
-[avoid conversion operators](#ro-conversion) --
-[and lambdas](#ro-lambda)
-* `public`, `private`, and `protected`:
-[information hiding](#rc-private) --
-[consistency](#rh-public) --
+[initialiseurs de membres par défaut](#rc-in-class-initializer) --
+[membres de classe](#rc-initialize) --
+[fonctions de fabrique](#rc-factory)
+* expression lambda :
+[quand l'utiliser](#ss-lambdas)
+* opérateur :
+[conventionnel](#ro-conventional) --
+[éviter les opérateurs de conversion](#ro-conversion) --
+[et lambdas](#ro-lambda)
+* `public`, `private` et `protected` :
+[masquage de l'information](#rc-private) --
+[cohérence](#rh-public) --
 [`protected`](#rh-protected)
-* `static_assert`:
-[compile-time checking](#rp-compile-time) --
-[and concepts](#rt-check-class)
-* `struct`:
-[for organizing data](#rc-org) --
-[use if no invariant](#rc-struct) --
-[no private members](#rc-class)
-* `template`:
+* `static_assert` :
+[vérification à la compilation](#rp-compile-time) --
+[et concepts](#rt-check-class)
+* `struct` :
+[pour organiser les données](#rc-org) --
+[utiliser si pas d'invariant](#rc-struct) --
+[pas de membres privés](#rc-class)
+* `template` :
 [abstraction](#rt-raise) --
-[containers](#rt-cont) --
+[conteneurs](#rt-cont) --
 [concepts](#rt-concepts)
-* `unsigned`:
-[and signed](#res-mix) --
-[bit manipulation](#res-unsigned)
-* `virtual`:
+* `unsigned` :
+[et signé](#res-mix) --
+[manipulation de bits](#res-unsigned)
+* `virtual` :
 [interfaces](#ri-abstract) --
-[not `virtual`](#rc-concrete) --
-[destructor](#rc-dtor-virtual) --
-[never fail](#rc-dtor-fail)
+[pas `virtual`](#rc-concrete) --
+[destructeur](#rc-dtor-virtual) --
+[jamais échouer](#rc-dtor-fail)
 
-You can look at design concepts used to express the rules:
+Vous pouvez consulter les concepts de conception utilisés pour exprimer les règles :
 
-* assertion: ???
-* error: ???
-* exception: exception guarantee (???)
-* failure: ???
-* invariant: ???
-* leak: ???
-* library: ???
-* precondition: ???
-* postcondition: ???
-* resource: ???
+* assertion : ???
+* error : ???
+* exception : garantie d'exception (???)
+* failure : ???
+* invariant : ???
+* leak : ???
+* library : ???
+* precondition : ???
+* postcondition : ???
+* resource : ???
