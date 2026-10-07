@@ -24,12 +24,6 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: ls
-        run: |
-          ls
-          ls ./scripts/python/split_guidelines.py
-
-
       - name: Split markdown file into section files
         run: python ./scripts/python/split_guidelines.py
 
