@@ -27,6 +27,7 @@
 
 <!-- Génération automatique de la liste des fichiers fr/ -->
     {% assign pages = site.pages | where_exp: "p", "p.path contains '/fr/'" %}
+        {{ pages | inspect }}
     {% for p in pages %}
         {{ p | inspect }}
         {{ p.name }}
