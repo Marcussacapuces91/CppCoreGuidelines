@@ -28,8 +28,8 @@
     {% if file.name == "001-main.md" %}
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/001-main.html">Lignes Directrices Essentielles de C++</a>
     {% else %}
-      {% assign title = file.name | replace: '.md', '' %}
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ file.path | replace: '.md', '.html' }}">{{ title | slice: 0,1 | upcase }}{{ title | slice: 1 | lowcase }}</a>
+      {% assign title = file.name | replace: '.md', '' | slice: 4 %}
+      <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ file.path | replace: '.md', '.html' }}">{{ title | slice: 0, 1 | upcase }}{{ title | slice: 1 | downcase }}</a>
     {% endif %}
 {% endfor %}
       
