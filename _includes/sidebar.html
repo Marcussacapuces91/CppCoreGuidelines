@@ -26,7 +26,9 @@
       <br/>
 
 <!-- Génération automatique de la liste des fichiers fr/ -->
-    {%- assign fr_files = site.pages | where: "extname", ".md" | where_exp: "item", "item.path contains '/fr/'" | sort: "path" -%}
+    {%- assign fr_files = site.files | where: "extname", ".md" | where_exp: "item", "item.path contains '/fr/'" | sort: "path" -%}
+    {% assign fr_files = site.pages | where_exp: "item", "item.name contains '/fr/'" | sort: "name" %}
+
     <pre>site.pages: {{ site.pages | inspect }}</pre>
     <pre>site.fr: {{ site.fr | inspect }}</pre>
     <pre>site.collections['fr']: {{ site.collections['fr'] | inspect }}</pre>
