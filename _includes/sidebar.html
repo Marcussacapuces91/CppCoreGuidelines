@@ -30,7 +30,7 @@
     {% for file in fr_files %}
         {% if file.name != "001-main.md" %}
         {%- assign title = file.name | replace: '.md', '' | slice: 4,999 -%}
-      <!-- {{ file.title }} -->
+      <!-- {{ file | inspect }} -->
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ file.path | replace: '.md', '.html' }}">{{ file.title }} ({{ title | slice: 0, 1 | upcase }}{{ title | slice: 1,999 | downcase }})</a>
         {%- endif -%}
     {% endfor %}
