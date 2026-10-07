@@ -13,8 +13,7 @@
     </div>
     <nav class="sidebar-nav">
       <small>
-        {% if page.name == "CppCoreGuidelines.md" %}
-
+{% if page.name == "CppCoreGuidelines.md" %}
         <div class="switch">
           <input class="tgl tgl-cpp" id="hl_button" type="checkbox"/>
           <!-- label class="tgl-btn" data-tg-off="Turn ON syntax highlighting" data-tg-on="Turn OFF syntax highlighting" for="hl_button"></label -->
@@ -53,15 +52,13 @@
       <a class="sidebar-nav-item active" href="#s-tools">Appendix D: Tools support</a>
       <a class="sidebar-nav-item active" href="#s-glossary">Glossary</a>
       <a class="sidebar-nav-item active" href="#s-unclassified">To-do: Unclassified proto-rules</a>
-        {% else %}
-
-      <a class="sidebar-nav-item active" href="CppCoreGuidelines.html">Read the C++ Core Guidelines</a>
+{% else %}
+      <a class="sidebar-nav-item active" href="CppCoreGuidelines.html">Lire les Lignes Directrices Essentielles de C++</a>
       <br/>
-      <a class="sidebar-nav-item active" href="index.html">View project README</a>
-      <a class="sidebar-nav-item active" href="CONTRIBUTING.md">View project Contributing</a>
-      <a class="sidebar-nav-item active" href="LICENSE">View project License</a>
-        {% endif %}
-
+      <a class="sidebar-nav-item active" href="index.html">Voir le README du projet</a>
+      <a class="sidebar-nav-item active" href="CONTRIBUTING.md">Voir le fichier Contributing</a>
+      <a class="sidebar-nav-item active" href="LICENSE">Voir le fichier de Licence</a>
+{% endif %}
       </small>
 
     </nav>
