@@ -31,7 +31,8 @@ def slugify(title: str) -> str:
     except:
         pass
     print(normalized)
-    normalized = re.sub(r"[(s-),^a-zA-Z0-9\s-]", "", normalized).strip().lower()    # Suppress special char and turn low case
+    normalized = re.sub(r"[^a-zA-Z0-9\s-]", "", normalized).strip().lower()    # Suppress special char and turn low case
+    normalized = re.sub(r"^s-", "", normalized)
     normalized = re.sub(r"[\s-]+", "-", normalized)                            # Replace spaces by '-'
     return normalized or "section"
 
