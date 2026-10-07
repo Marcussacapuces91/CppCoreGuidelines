@@ -1,9 +1,11 @@
 [![C++ Core Guidelines](cpp_core_guidelines_logo_text.png)](http://Marcussacapuces91.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
->"Dans le C++, il y a un langage plus petit, plus simple et plus sûr qui lutte pour s'exprimer."
+>"Within C++ is a smaller, simpler, safer language struggling to get out."
 >-- <cite>Bjarne Stroustrup</cite>
 
-Les [C++ Core Guidelines](CppCoreGuidelines.md) sont un effort collaboratif dirigé par Bjarne Stroustrup, tout comme le langage C++ lui-même. Ils sont le fruit de nombreuses années-personnes de discussion et de conception au sein de plusieurs organisations. Leur conception favorise une applicabilité générale et une large adoption, mais ils peuvent être librement copiés et modifiés pour répondre aux besoins de votre organisation.
+*trad* : Dans le C++, il y a un langage plus petit, plus simple et plus sûr qui lutte pour s'exprimer.
+
+Les [Lignes Directrices Essentielles de C++](CppCoreGuidelines.md) sont un effort collaboratif dirigé par Bjarne Stroustrup, tout comme le langage C++ lui-même. Ils sont le fruit de nombreuses *années-personnes* de discussion et de conception au sein de plusieurs organisations. Leur conception favorise une applicabilité générale et une large adoption, mais ils peuvent être librement copiés et modifiés pour répondre aux besoins de votre organisation.
 
 ## Pour commencer
 
@@ -13,9 +15,9 @@ Les recommandations elles-mêmes se trouvent dans [CppCoreGuidelines](CppCoreGui
 
 Notez que cette version web est **traduite** et intégrée manuellement et peut être légèrement plus ancienne que la version de la branche principale et originale du site http://github.com/isocpp/CppCoreGuidelines.
 
-Les Guidelines sont un document qui évolue constamment sans cadence de publication stricte. Bjarne Stroustrup examine périodiquement le document et incrémente le numéro de version dans l'introduction. [Vérifiez le numéro de version actuel](CppCoreGuidelines.md#intro) et les changements récents dans les dépôts.
+Les Lignes Directrices sont un document qui évolue constamment sans cadence de publication stricte. Bjarne Stroustrup examine périodiquement le document et incrémente le numéro de version dans l'introduction. [Vérifiez le numéro de version actuel](fr/001.main.md) (CppCoreGuidelines.md#intro) et les changements récents dans les dépôts.
 
-De nombreuses lignes directrices font appel à la bibliothèque de support GSL (Guidelines Support Library), uniquement en-têtes. Une implémentation est disponible à [GSL: Guidelines Support Library](https://github.com/Microsoft/GSL).
+De nombreuses Lignes Directrices font appel à la bibliothèque de support GSL (Guidelines Support Library), uniquement en-têtes. Une implémentation est disponible à [GSL: Guidelines Support Library](https://github.com/Microsoft/GSL).
 
 ## Contexte et périmètre
 
