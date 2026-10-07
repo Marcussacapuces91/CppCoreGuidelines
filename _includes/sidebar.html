@@ -28,10 +28,9 @@
 <!-- Génération automatique de la liste des fichiers fr/ -->
     {%- assign fr_files = site.pages | where: "extname", ".md" | where_exp: "item", "item.path contains '/fr/'" | sort: "path" -%}
     {% for file in fr_files %}
-      <!-- {{ file | inspect }} -->
         {% if file.name != "001-main.md" %}
         {%- assign title = file.name | replace: '.md', '' | slice: 4,999 -%}
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ file.path | replace: '.md', '.html' }}">{{ file.title }} ({{ title | slice: 0, 1 | upcase }}{{ title | slice: 1,999 | downcase }})</a>
+      <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ file.path | replace: '.md', '.html' }}">{{ title | slice: 0, 1 | upcase }}{{ title | slice: 1,999 | downcase }}</a>
         {%- endif -%}
     {% endfor %}
 {% endif %}
