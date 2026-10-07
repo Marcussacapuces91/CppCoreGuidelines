@@ -37,6 +37,20 @@ Les règles sont conçues pour être prises en charge par un outil d'analyse. Le
 
 Les règles sont destinées à une introduction progressive dans une base de code. Nous prévoyons de construire des outils pour cela et espérons que d'autres le feront aussi.
 
+## Découpage et traduction
+
+Pour en faciliter la lecture aux francophones, le document original en anglais a été découpé en plusieurs parties, chacune ensuite traduite en français.
+
+En voici la liste :
+
+* [Titre](fr/001-main.md)
+* [Résumé](fr/002-abstract.md)
+* [Introduction](fr/003-introduction.md)
+* [Philosophie](fr/004-philosophy.md)
+
+... *travail en cours*
+
+
 ## Contributions et licence
 
 Les commentaires et suggestions d'amélioration sont les bienvenus. Nous prévoyons de modifier et d'étendre ce document au fur et à mesure que notre compréhension s'améliorera et que le langage et l'ensemble des bibliothèques disponibles évolueront. Plus de détails sont disponibles dans [CONTRIBUTING](./CONTRIBUTING.md) et [LICENSE](./LICENSE) (*note* : j'ai volontairement conservé la licence du dépôt original).
