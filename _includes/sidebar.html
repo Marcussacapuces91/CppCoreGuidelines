@@ -19,21 +19,20 @@
         <!-- label class="tgl-btn" data-tg-off="Turn ON syntax highlighting" data-tg-on="Turn OFF syntax highlighting" for="hl_button"></label -->
         <label class="tgl-btn" data-tg-off="Activer la coloration syntaxique" data-tg-on="Désactiver la coloration syntaxique" for="hl_button"></label>
       </div>
-        
+
       <!-- Items have to be added manually until for now -->
 
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/001-main.html">Lignes Directrices Essentielles de C++</a>
       <br/>
 
 <!-- Génération automatique de la liste des fichiers fr/ -->
-    {%- assign fr_files = site.static_files | where: "extname", ".md" | where_exp: "item", "item.path contains '/fr/'" | sort: "path" -%}
+    {%- assign fr_files = site.pages | where: "extname", ".md" | where_exp: "item", "item.path contains '/fr/'" | sort: "path" -%}
     {% for file in fr_files %}
         {% if file.name != "001-main.md" %}
         {%- assign title = file.name | replace: '.md', '' | slice: 4,999 -%}
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ file.path | replace: '.md', '.html' }}">{{ file.title }} ({{ title | slice: 0, 1 | upcase }}{{ title | slice: 1,999 | downcase }})</a>
         {%- endif -%}
     {% endfor %}
-
 {% endif %}
       
 <!--
