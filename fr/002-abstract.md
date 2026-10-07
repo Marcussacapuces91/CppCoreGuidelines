@@ -1,3 +1,7 @@
+---
+title: Résumé
+---
+
 # <a name="s-abstract"></a>Résumé
 
 Ce document est un ensemble de lignes directrices pour bien utiliser C++.  
