@@ -25,7 +25,9 @@ jobs:
           python-version: "3.x"
 
       - name: Split markdown file into section files
-        run: python ./scripts/python/split_guidelines.py
+        run: |
+          python ./scripts/python/split_guidelines.py
+          ls ./guidelines
 
       - name: Commit and push generated files
         run: |
