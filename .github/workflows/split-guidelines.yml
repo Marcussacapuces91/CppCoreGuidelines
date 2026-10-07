@@ -26,11 +26,11 @@ jobs:
       - name: ls
         run: |
           ls
-          ls CppCoreGuidelines/scripts/python/split_guidelines.py
+          ls ./scripts/python/split_guidelines.py
 
 
       - name: Split markdown file into section files
-        run: python .github/scripts/python/split_guidelines.py
+        run: python ./scripts/python/split_guidelines.py
 
       - name: Commit and push generated files
         run: |
