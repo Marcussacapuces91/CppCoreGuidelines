@@ -1,2 +1,2 @@
-include: [CppCoreGuidelines.md]
-exclude: [docs, talks, Gemfile, params.json]
+include: [fr]
+exclude: [CppCoreGuidelines.md, guidelines, docs, talks, Gemfile, params.json]
