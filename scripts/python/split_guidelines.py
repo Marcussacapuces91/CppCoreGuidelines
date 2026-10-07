@@ -28,7 +28,7 @@ def slugify(title: str) -> str:
     normalized = normalized.encode("ascii", "ignore").decode("ascii")          # Only ascii char
     print(normalized, end="")    # "# <a name="main"></a>C++ Core Guidelines"
     try:
-        _, _, normalized = normalized.split('"')                                   # Keep only after 2 x '"'
+        _, normalized, _ = normalized.split('"')                                   # Keep only after 2 x '"'
     except:
         pass
     print(normalized)
