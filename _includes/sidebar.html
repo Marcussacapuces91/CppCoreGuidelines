@@ -28,6 +28,10 @@
 <!-- Génération automatique de la liste des fichiers fr/ -->
     {% assign pages = site.pages | where_exp: "p", "p.path contains '/fr/'" %}
     {% for p in pages %}
+        {{ p | inspect }}
+        {{ p.name }}
+        {{ p.title }}
+        
         {% if file.name != "001-main.md" %}
         {%- assign title = file.name | replace: '.md', '' | slice: 4,999 -%}
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ file.path | replace: '.md', '.html' }}">{{ title | slice: 0, 1 | upcase }}{{ title | slice: 1,999 | downcase }}</a>
