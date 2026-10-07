@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - "CppCoreGuidelines.md"
+      - "scripts/python/split_guidelines.py"
   workflow_dispatch:
 
 jobs:
