@@ -27,7 +27,10 @@ def slugify(title: str) -> str:
     normalized = unicodedata.normalize("NFKD", title)
     normalized = normalized.encode("ascii", "ignore").decode("ascii")          # Only ascii char
     print(normalized)
-    _, normalized = normalized.split(':')                                      # Keep only after ':'
+    try:
+        _, normalized = normalized.split(':')                                      # Keep only after ':'
+    except:
+        normalized = "title"
     normalized = re.sub(r"[^a-zA-Z0-9\s-]", "", normalized).strip().lower()    # Suppress special char and turn low case
     normalized = re.sub(r"[\s-]+", "-", normalized)                            # Replace spaces by '-'
     return normalized or "section"
