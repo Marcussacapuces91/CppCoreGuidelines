@@ -23,13 +23,13 @@
       <!-- Items have to be added manually until for now -->
 
 <!-- Génération automatique de la liste des fichiers fr/ -->
-{% assign fr_files = site.static_files | where: "extname", ".html" | where_exp: "item", "item.path contains '/fr/'" | sort: "path" %}
+{% assign fr_files = site.static_files | where: "extname", ".md" | where_exp: "item", "item.path contains '/fr/'" | sort: "path" %}
 {% for file in fr_files %}
     <!-- {{ file.name }} -->
-    {% if file.name == "001-main.html" %}
+    {% if file.name == "001-main.md" %}
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/001-main.html">Lignes Directrices Essentielles de C++</a>
     {% else %}
-    {% assign title = file.name | replace: '.html', '' %}
+      {% assign title = file.name | replace: '.html', '' %}
       <a class="sidebar-nav-item active" href="{{ file.path }}">{{ file.name | replace: '.html', '' | upcase }}</a>
     {% endif %}
 {% endfor %}
