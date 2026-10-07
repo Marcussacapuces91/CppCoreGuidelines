@@ -25,6 +25,7 @@
 <!-- Génération automatique de la liste des fichiers fr/ -->
 {% assign fr_files = site.static_files | where: "extname", ".html" | where_exp: "item", "item.path contains '/fr/'" | sort: "path" %}
 {% for file in fr_files %}
+    <!-- {{ file }} -->
     {% if file == "001-main.html" %}
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/001-main.html">Lignes Directrices Essentielles de C++</a>
     {% else %}        
@@ -33,7 +34,7 @@
     {% endif %}
 {% endfor %}
       
-        
+<!--
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/002-abstract.html">Résumé</a>
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/003-introduction.html">In: Introduction</a>
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/004-philosophy.html">P: Philosophy</a>
@@ -65,6 +66,8 @@
       <a class="sidebar-nav-item active" href="#s-tools">Appendix D: Tools support</a>
       <a class="sidebar-nav-item active" href="#s-glossary">Glossary</a>
       <a class="sidebar-nav-item active" href="#s-unclassified">To-do: Unclassified proto-rules</a>
+-->
+        
 {% else %}
       <a class="sidebar-nav-item active" href="fr/001-main.html">Lignes Directrices Essentielles de C++</a>
       <br/>
