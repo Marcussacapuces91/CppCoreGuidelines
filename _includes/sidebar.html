@@ -22,35 +22,20 @@
         
       <!-- Items have to be added manually until for now -->
 
+      <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/001-main.html">Lignes Directrices Essentielles de C++</a>
+      <br/>  
+
 <!-- Génération automatique de la liste des fichiers fr/ -->
 {% assign fr_files = site.static_files | where: "extname", ".md" | where_exp: "item", "item.path contains '/fr/'" | sort: "path" %}
 {% for file in fr_files %}
-    {% if file.name == "001-main.md" %}
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/001-main.html">Lignes Directrices Essentielles de C++</a>
-    {%- else -%}
+    {% if file.name != "001-main.md" %}
       {%- assign title = file.name | replace: '.md', '' | slice: 4,999 -%}
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ file.path | replace: '.md', '.html' }}">{{ title | slice: 0, 1 | upcase }}{{ title | slice: 1,999 | downcase }}</a>
     {%- endif -%}
 {% endfor %}
+{% endif %}
       
 <!--
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/002-abstract.html">Résumé</a>
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/003-introduction.html">In: Introduction</a>
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines/fr/004-philosophy.html">P: Philosophy</a>
-      <a class="sidebar-nav-item active" href="#s-interfaces">I: Interfaces</a>
-      <a class="sidebar-nav-item active" href="#s-functions">F: Functions</a>
-      <a class="sidebar-nav-item active" href="#s-class">C: Classes and class hierarchies</a>
-      <a class="sidebar-nav-item active" href="#s-enum">Enum: Enumerations</a>
-      <a class="sidebar-nav-item active" href="#s-resource">R: Resource management</a>
-      <a class="sidebar-nav-item active" href="#s-expr">ES: Expressions and statements</a>
-      <a class="sidebar-nav-item active" href="#s-performance">Per: Performance</a>
-      <a class="sidebar-nav-item active" href="#s-concurrency">CP: Concurrency</a>
-      <a class="sidebar-nav-item active" href="#s-errors">E: Error handling</a>
-      <a class="sidebar-nav-item active" href="#s-const">Con: Constants and immutability</a>
-      <a class="sidebar-nav-item active" href="#s-templates">T: Templates and generic programming</a>
-      <a class="sidebar-nav-item active" href="#s-cpl">CPL: C-style programming</a>
-      <a class="sidebar-nav-item active" href="#s-source">SF: Source files</a>
-      <a class="sidebar-nav-item active" href="#s-stdlib">SL: The Standard library</a>
       <br/>
       <a class="sidebar-nav-item active" href="#s-a">A: Architectural Ideas</a>
       <a class="sidebar-nav-item active" href="#s-not">NR: Non-Rules and myths</a>
@@ -67,13 +52,9 @@
       <a class="sidebar-nav-item active" href="#s-unclassified">To-do: Unclassified proto-rules</a>
 -->
         
-{% else %}
-      <a class="sidebar-nav-item active" href="fr/001-main.html">Lignes Directrices Essentielles de C++</a>
-      <br/>
       <a class="sidebar-nav-item active" href="index.html">Fichier README du projet</a>
       <a class="sidebar-nav-item active" href="CONTRIBUTING.md">Fichier Contributing</a>
       <a class="sidebar-nav-item active" href="LICENSE">Fichier de Licence</a>
-{% endif %}
       </small>
 
     </nav>
