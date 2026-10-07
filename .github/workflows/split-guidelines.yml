@@ -1,4 +1,4 @@
-name: Split CppCoreGuidelines
+name: Split file "CppCoreGuidelines.md"
 
 on:
   push:
