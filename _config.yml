@@ -2,5 +2,4 @@ include: [index.html, CppCoreGuidelines.md, '_fr']
 exclude: [guidelines, docs, talks, Gemfile, params.json]
 collections:
   fr:
-    output: true
     sort_by: path
