@@ -3,7 +3,7 @@
 >"Within C++ is a smaller, simpler, safer language struggling to get out."
 >-- <cite>Bjarne Stroustrup</cite>
 
-*trad* : Dans le C++, il y a un langage plus petit, plus simple et plus sûr qui lutte pour s'exprimer.
+*trad. : Dans le C++, il y a un langage plus petit, plus simple et plus sûr qui lutte pour s'exprimer.*
 
 Les [Lignes Directrices Essentielles de C++](CppCoreGuidelines.md) sont un effort collaboratif dirigé par Bjarne Stroustrup, tout comme le langage C++ lui-même. Ils sont le fruit de nombreuses *années-personnes* de discussion et de conception au sein de plusieurs organisations. Leur conception favorise une applicabilité générale et une large adoption, mais ils peuvent être librement copiés et modifiés pour répondre aux besoins de votre organisation.
 
@@ -43,10 +43,10 @@ Pour en faciliter la lecture aux francophones, le document original en anglais a
 
 En voici la liste :
 
-* [Accueil](_fr/001-main.md)
-* [Résumé](_fr/002-abstract.md)
-* [Introduction](_fr/003-introduction.md)
-* [Philosophie](_fr/004-philosophy.md)
+* [Accueil](fr/001-main.md)
+* [Résumé](fr/002-abstract.md)
+* [Introduction](_r/003-introduction.md)
+* [Philosophie](fr/004-philosophy.md)
 
 ... *travail en cours*
 
