@@ -43,7 +43,7 @@ Pour en faciliter la lecture aux francophones, le document original en anglais a
 
 En voici la liste :
 
-* [Titre](_fr/001-main.md)
+* [Accueil](_fr/001-main.md)
 * [Résumé](_fr/002-abstract.md)
 * [Introduction](_fr/003-introduction.md)
 * [Philosophie](_fr/004-philosophy.md)
