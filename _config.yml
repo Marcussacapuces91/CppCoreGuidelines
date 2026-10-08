@@ -3,4 +3,3 @@ exclude: [CppCoreGuidelines.md, guidelines, docs, talks, Gemfile, params.json]
 collections:
   fr:
     output: true
-    permalink: ./fr/
