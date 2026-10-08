@@ -19,7 +19,7 @@ Nous mettons ce projet à disposition des « utilisateurs bienveillants » pour 
 
 Les commentaires et suggestions d'amélioration sont les bienvenus.
 Nous prévoyons de modifier et d'étendre ce document au fur et à mesure que notre compréhension s'améliore et que le langage ainsi que l'ensemble des bibliothèques disponibles progressent.
-Lors de vos commentaires, veuillez tenir compte de [l'introduction](#s-introduction), qui présente nos objectifs et notre approche générale.
+Lors de vos commentaires, veuillez tenir compte de [l'introduction](003-introduction.md), qui présente nos objectifs et notre approche générale.
 La liste des contributeurs est [ici](#ss-ack).
 
 Problèmes :
@@ -27,12 +27,12 @@ Problèmes :
 * Les ensembles de règles n'ont pas encore été vérifiés de manière exhaustive pour leur exhaustivité, leur cohérence ou leur applicabilité.
 * Les triples points d'interrogation (???) indiquent des informations connues manquantes.
 * Mettre à jour les sections de références ; de nombreuses sources antérieures à C++11 sont désormais trop anciennes.
-* Pour une liste de tâches à faire plus ou moins à jour, voir : [À faire : Proto-règles non classées](#s-unclassified).
+* Pour une liste de tâches à faire plus ou moins à jour, voir : [À faire : Proto-règles non classées](003-introduction.md).
 
-Vous pouvez [lire une explication sur la portée et la structure de ce guide](#s-abstract) ou passer directement à :
+Vous pouvez [lire une explication sur la portée et la structure de ce guide](002-abstract.md) ou passer directement à :
 
-* [In : Introduction](#s-introduction)
-* [P : Philosophie](#s-philosophy)
+* [In : Introduction](003-introduction.md)
+* [P : Philosophie](004-philosophy.md)
 * [I : Interfaces](#s-interfaces)
 * [F : Fonctions](#s-functions)
 * [C : Classes et hiérarchies de classes](#s-class)
