@@ -28,8 +28,8 @@
 <!-- Génération automatique de la liste des fichiers fr/ -->
     {% assign pages = site.fr | sort: "path" %}
     {% for p in pages %}
-        {{ p | inspect }}
-        {% if p.relative_path != "001-main.md" %}
+      <!--  {{ p | inspect }} -->
+        {% if slug != "001-main" %}
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines/{{ p.url }}">{{ p.title  }}</a>
         {%- endif -%}
     {% endfor %}
