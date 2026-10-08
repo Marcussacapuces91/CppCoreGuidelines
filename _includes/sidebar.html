@@ -23,7 +23,6 @@
 <!-- Génération automatique de la liste des fichiers fr/ -->
     {% assign pages = site.fr | sort: "path" %}
     {% for p in pages %}
-      <!--  {{ p | inspect }} -->
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ p.url }}">{{ p.title  }}</a>
         {% if p.slug == "001-main" %}
       <br/>
