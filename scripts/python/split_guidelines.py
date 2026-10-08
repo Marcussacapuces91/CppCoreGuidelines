@@ -4,7 +4,7 @@ import re
 import unicodedata
 
 src = Path("CppCoreGuidelines.md")
-out_dir = Path("guidelines")
+out_dir = Path("_guidelines")
 out_dir.mkdir(exist_ok=True)
 
 # remove previous generated files if you want a clean run
