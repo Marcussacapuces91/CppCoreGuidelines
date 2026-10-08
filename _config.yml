@@ -4,3 +4,4 @@ collections:
   fr:
     output: true
     layout: default.html
+    sort_by: path
