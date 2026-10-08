@@ -29,7 +29,7 @@
     {% assign pages = site.fr | sort: "path" %}
     {% for p in pages %}
         {% if p.name != "001-main.md" %}
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ p.path | replace: '.md', '.html' }}">{{ p.title  }}</a>
+      <a class="sidebar-nav-item active" href="/CppCoreGuidelines/{{ p.path | replace: '.md', '.html' }}">{{ p.title  }}</a>
         {%- endif -%}
     {% endfor %}
 {% endif %}
