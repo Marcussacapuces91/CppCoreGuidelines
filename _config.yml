@@ -1,5 +1,5 @@
-include: [index.html, CppCoreGuidelines.md, '_fr']
-exclude: [guidelines, docs, talks, Gemfile, params.json]
+include: [index.html, CppCoreGuidelines.md]
+exclude: [guidelines, docs, talks, Gemfile, params.json, '_fr']
 collections:
   fr:
     output: true
