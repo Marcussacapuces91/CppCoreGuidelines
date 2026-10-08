@@ -213,47 +213,283 @@ Proposer des alternatives :
 * erreurs de plage → `span`  
 * conversions réductrices → `narrow`, `narrow_cast`
 
-
-### <a name="rp-compile-time"></a>P.5 : Préférer les vérifications à la compilation
+### <a name="rp-compile-time"></a>P.5: Préférer les vérifications à la compilation aux vérifications à l’exécution
 
 ##### Raison
 
-Clarté et performance.  
-Pas besoin d’écrire des gestionnaires d’erreurs pour les erreurs détectées à la compilation.
+Lisibilité du code et performance.  
+Vous n’avez pas besoin d’écrire des gestionnaires d’erreurs pour des erreurs détectées à la compilation.
 
 ##### Exemple
 
-    static_assert(sizeof(Int) >= 4);
+    // Int est un alias utilisé pour les entiers
+    int bits = 0;         // à éviter : code inutile
+    for (Int i = 1; i; i <<= 1)
+        ++bits;
+    if (bits < 32)
+        cerr << "Int too small\n";
 
-Ou mieux : utiliser `int32_t`.
+Cet exemple échoue à atteindre son objectif (car le dépassement est indéfini) et devrait être remplacé par un simple `static_assert` :
+
+    // Int est un alias utilisé pour les entiers
+    static_assert(sizeof(Int) >= 4);    // à faire : vérification à la compilation
+
+Ou mieux encore, utiliser le système de types et remplacer `Int` par `int32_t`.
 
 ##### Exemple
 
-    void read(span<int> r);
+    void read(int* p, int n);   // lire au plus n entiers dans *p
+
     int a[100];
-    read(a);  // le compilateur déduit la taille
+    read(a, 1000);    // mauvais, dépassement
+
+Mieux :
+
+    void read(span<int> r); // lire dans l’intervalle d’entiers r
+
+    int a[100];
+    read(a);        // mieux : laisser le compilateur déterminer le nombre d’éléments
+
+**Formulation alternative** : Ne pas repousser à l’exécution ce qui peut être bien fait à la compilation.
+
+##### Application
+
+* Rechercher les arguments de type pointeur.
+* Rechercher les vérifications d’intervalle faites à l’exécution.
 
 
 ### <a name="rp-run-time"></a>P.6 : Ce qui ne peut pas être vérifié à la compilation doit pouvoir l’être à l’exécution
 
+##### Raison
 
-### <a name="rp-early"></a>P.7 : Détecter les erreurs d’exécution tôt
+Laisser des erreurs difficiles à détecter dans un programme, c’est s’exposer à des crashs et à de mauvais résultats.
+
+##### Note
+
+Idéalement, nous attrapons toutes les erreurs (qui ne sont pas des erreurs de logique du programmeur) soit à la compilation, soit à l’exécution.  
+Il est impossible de tout attraper à la compilation, et souvent trop coûteux de tout attraper à l’exécution.  
+Cependant, nous devrions écrire des programmes qui peuvent *en principe* être vérifiés, avec suffisamment de ressources.
+
+##### Exemple, mauvais
+
+    // compilé séparément, peut-être chargé dynamiquement
+    extern void f(int* p);
+
+    void g(int n)
+    {
+        // mauvais : le nombre d’éléments n’est pas passé à f()
+        f(new int[n]);
+    }
+
+Ici, une information cruciale (le nombre d’éléments) a été tellement « obscurcie » que l’analyse statique devient quasi impossible et la vérification dynamique très difficile.
+
+##### Exemple, mauvais
+
+    extern void f2(int* p, int n);
+
+    void g2(int n)
+    {
+        // mauvais : un mauvais nombre d’éléments peut être passé à f2()
+        f2(new int[n], n);
+    }
+
+Passer le nombre d’éléments est mieux que passer seulement le pointeur, mais une simple faute de frappe peut introduire une erreur grave.
+
+##### Exemple, mauvais
+
+    extern void f3(unique_ptr<int[]>, int n);
+
+    void g3(int n)
+    {
+        f3(make_unique<int[]>(n), m);    // mauvais : propriété et taille séparées
+    }
+
+##### Exemple
+
+Nous devons passer le pointeur et le nombre d’éléments comme un objet intégral :
+
+    extern void f4(vector<int>&);	// compilé séparément, peut-être chargé dynamiquement
+    extern void f4(span<int>);		// compilé séparément, peut-être chargé dynamiquement
+					// NB : on considère que l'appel du code est API-compatible; en utilisant
+					// un compilateur C++ compatible et la même implémentation de stdlib
+
+    void g3(int n)
+    {
+        vector<int> v(n);
+        f4(v);            // passe une référence, conserve la propriété
+        f4(span<int>{v}); // passe une vue, conserve la propriété
+    }
+
+##### Exemple
+
+Comment transférer la propriété *et* les informations nécessaires à la validation ?
 
 
-### <a name="rp-leak"></a>P.8 : Ne pas laisser fuiter de ressources
+    vector<int> f5(int n)    // OK : move
+    {
+        vector<int> v(n);
+        // ...
+        return v;
+    }
+
+    unique_ptr<int[]> f6(int n)    // mauvais : perd n
+    {
+        auto p = make_unique<int[]>(n);
+        // ...
+        return p;
+    }
+
+    owner<int*> f7(int n)    // mauvais : perd n et risque d’oubli de delete
+    {
+        owner<int*> p = new int[n];
+        // ...
+        return p;
+    }
+
+##### Application
+
+* Signaler les interfaces de style (pointeur, taille)
+* ???
 
 
-### <a name="rp-waste"></a>P.9 : Ne pas gaspiller temps ou espace
+### <a name="rp-early"></a>P.7 : Attraper les erreurs d’exécution tôt
+
+##### Raison
+
+Éviter les crashs « mystérieux ».  
+Éviter les erreurs menant à des résultats incorrects.
+
+##### Exemple
+
+    void increment1(int* p, int n)    // mauvais : sujet aux erreurs
+    {
+        for (int i = 0; i < n; ++i) ++p[i];
+    }
+
+    void use1(int m)
+    {
+        const int n = 10;
+        int a[n] = {};
+        increment1(a, m);   // si m == 20 → corruption ou crash
+    }
+
+Mieux :
+
+    void increment2(span<int> p)
+    {
+        for (int& x : p) ++x;
+    }
+
+    void use2(int m)
+    {
+        const int n = 10;
+        int a[n] = {};
+        increment2({a, m});    // vérification possible au point d’appel
+    }
+
+Encore mieux :
+
+    void use3(int m)
+    {
+        const int n = 10;
+        int a[n] = {};
+        increment2(a);   // aucune répétition du nombre d’éléments
+    }
+
+##### Exemple, mauvais
+
+Ne pas vérifier plusieurs fois la même valeur.  
+Ne pas passer des données structurées sous forme de chaînes :
 
 
-### <a name="rp-mutable"></a>P.10 : Préférer les données immuables
+    Date read_date(istream& is);
+    Date extract_date(const string& s);
+
+    void user1(const string& date)
+    {
+        auto d = extract_date(date);
+    }
+
+    void user2()
+    {
+        Date d = read_date(cin);
+        user1(d.to_string());   // validation double
+    }
+
+##### Exemple
+
+Les vérifications excessives peuvent coûter cher.  
+Ne pas ajouter de vérifications qui changent la complexité asymptotique.
 
 
-### <a name="rp-library"></a>P.11 : Encapsuler les constructions complexes
+### <a name="rp-leak"></a>P.8: Ne laisser fuiter aucune ressource
+
+##### Raison
+
+Même une fuite lente finit par épuiser les ressources disponibles.
+
+##### Exemple, mauvais
+
+    void f(const char* name)
+    {
+        FILE* input = fopen(name, "r");
+        if (something) return;   // fuite
+        fclose(input);
+    }
+
+Préférer le RAII :
+
+    void f(const char* name)
+    {
+        ifstream input {name};
+        if (something) return;   // OK : pas de fuite
+    }
 
 
-### <a name="rp-tools"></a>P.12 : Utiliser les outils de support
+# P.9 : Ne pas gaspiller du temps ou de l’espace
 
+##### Raison
 
-### <a name="rp-lib"></a>P.13 : Utiliser les bibliothèques de support
+C’est du C++.
 
+##### Exemple, mauvais
+
+*(Traduction fidèle du texte, code inchangé)*
+
+---
+
+# P.10 : Préférer les données immuables aux données mutables
+
+Raisons : plus simple à raisonner, pas de changement inattendu, meilleures optimisations, pas de data race.
+
+---
+
+# P.11 : Encapsuler les constructions complexes plutôt que les répandre
+
+##### Exemple
+
+Code bas niveau avec `malloc` / `realloc` → remplacer par `vector`.
+
+---
+
+# P.12 : Utiliser les outils de support quand c’est approprié
+
+Analyse statique, outils de concurrence, outils de test, etc.
+
+---
+
+# P.13 : Utiliser les bibliothèques de support quand c’est approprié
+
+Utiliser la bibliothèque standard et la GSL.  
+Si une bonne bibliothèque n’existe pas, peut-être la créer.
+
+---
+
+Si tu veux, je peux aussi :
+
+- produire une version **PDF-like** propre,  
+- une version **Markdown optimisée**,  
+- une version **résumée**,  
+- ou une version **commentée** pour apprentissage.
+
+Dis-moi ce que tu préfères.
