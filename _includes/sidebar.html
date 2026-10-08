@@ -30,7 +30,7 @@
     {% for p in pages %}
       <!--  {{ p | inspect }} -->
         {% if slug != "001-main" %}
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines/{{ p.url }}">{{ p.title  }}</a>
+      <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ p.url }}">{{ p.title  }}</a>
         {%- endif -%}
     {% endfor %}
 {% endif %}
