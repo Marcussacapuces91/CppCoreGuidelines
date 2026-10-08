@@ -1,4 +1,4 @@
-include: [_fr, CppCoreGuidelines.md]
+include: [index.html, CppCoreGuidelines.md, _fr]
 exclude: [CppCoreGuidelines.md, guidelines, docs, talks, Gemfile, params.json]
 collections:
   fr:
