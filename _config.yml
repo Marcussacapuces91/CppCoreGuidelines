@@ -1,14 +1,7 @@
-include: [index.html, CppCoreGuidelines.md]
+include: [index.html, CppCoreGuidelines.md, _fr]
 exclude: [guidelines, docs, talks, Gemfile, params.json]
-
-defaults:
-  - scope:
-      path: "fr"
-    values:
-      layout: default
 
 collections:
   fr:
     sort_by: path
-    output: true
     permalink: /fr/:name
