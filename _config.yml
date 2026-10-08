@@ -5,3 +5,4 @@ collections:
     sort_by: path
     output: true
     permalink: /fr/:name
+    layout: default
