@@ -20,17 +20,13 @@
         <label class="tgl-btn" data-tg-off="Syntaxe Active" data-tg-on="Syntaxe Neutre" for="hl_button"></label>
       </div>
 
-      <!-- Items have to be added manually until for now -->
-
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines/_fr/001-main.html">Lignes Directrices Essentielles de C++</a>
-      <br/>
-
 <!-- Génération automatique de la liste des fichiers fr/ -->
     {% assign pages = site.fr | sort: "path" %}
     {% for p in pages %}
       <!--  {{ p | inspect }} -->
-        {% if slug != "001-main" %}
       <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ p.url }}">{{ p.title  }}</a>
+        {% if p.slug == "001-main" %}
+      <br/>
         {%- endif -%}
     {% endfor %}
 {% endif %}
