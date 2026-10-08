@@ -3,4 +3,5 @@ exclude: [guidelines, docs, talks, Gemfile, params.json]
 collections:
   fr:
     sort_by: path
+    output: true
     permalink: /fr/:name
