@@ -3,5 +3,4 @@ exclude: [guidelines, docs, talks, Gemfile, params.json]
 collections:
   fr:
     output: true
-    layout: default
     sort_by: path
