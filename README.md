@@ -13,9 +13,9 @@ Les recommandations elles-mêmes se trouvent dans [CppCoreGuidelines](CppCoreGui
 - une [version originale, non traduite, de référence](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md) ;
 - une [version originale, non traduite, pour navigation](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
 
-Notez que cette version web est **traduite** et intégrée manuellement et peut être légèrement plus ancienne que la version de la branche principale et originale du site http://github.com/isocpp/CppCoreGuidelines.
+Notez que cette version web est **traduite** et intégrée manuellement et peut être légèrement plus ancienne que la version de la branche principale et originale du site [http://github.com/isocpp/CppCoreGuidelines](http://github.com/isocpp/CppCoreGuidelines).
 
-Les Lignes Directrices sont un document qui évolue constamment sans cadence de publication stricte. Bjarne Stroustrup examine périodiquement le document et incrémente le numéro de version dans l'introduction. [Vérifiez le numéro de version actuel](fr/001.main.md) (CppCoreGuidelines.md#intro) et les changements récents dans les dépôts.
+Les Lignes Directrices sont un document qui évolue constamment sans cadence de publication stricte. Bjarne Stroustrup examine périodiquement le document et incrémente le numéro de version dans l'introduction. [Vérifiez le numéro de version actuel](_fr/001.main.md) (CppCoreGuidelines.md#intro) et les changements récents dans les dépôts.
 
 De nombreuses Lignes Directrices font appel à la bibliothèque de support GSL (Guidelines Support Library), uniquement en-têtes. Une implémentation est disponible à [GSL: Guidelines Support Library](https://github.com/Microsoft/GSL).
 
@@ -43,10 +43,10 @@ Pour en faciliter la lecture aux francophones, le document original en anglais a
 
 En voici la liste :
 
-* [Titre](fr/001-main.md)
-* [Résumé](fr/002-abstract.md)
-* [Introduction](fr/003-introduction.md)
-* [Philosophie](fr/004-philosophy.md)
+* [Titre](_fr/001-main.md)
+* [Résumé](_fr/002-abstract.md)
+* [Introduction](_fr/003-introduction.md)
+* [Philosophie](_fr/004-philosophy.md)
 
 ... *travail en cours*
 
