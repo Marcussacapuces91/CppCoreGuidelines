@@ -46,16 +46,10 @@ En voici la liste :
 <!-- Génération automatique de la liste des fichiers fr/ -->
 {% assign pages = site.fr | sort: "path" %}
 {%- for p in pages %}
-* [{{ p.title }}]({{ p.url }})
+* [{{ p.title }}](/CppCoreGuidelines{{ p.url }})
 {%- endfor %}
 
-* [Accueil](fr/001-main.md)
-* [Résumé](fr/002-abstract.md)
-* [Introduction](_r/003-introduction.md)
-* [Philosophie](fr/004-philosophy.md)
-
 ... *travail en cours*
-
 
 ## Contributions et licence
 
