@@ -43,6 +43,12 @@ Pour en faciliter la lecture aux francophones, le document original en anglais a
 
 En voici la liste :
 
+<!-- Génération automatique de la liste des fichiers fr/ -->
+{% assign pages = site.fr | sort: "path" %}
+{%- for p in pages %}
+* [{{ p.title }}]({{ p.url }})
+{%- endfor %}
+
 * [Accueil](fr/001-main.md)
 * [Résumé](fr/002-abstract.md)
 * [Introduction](_r/003-introduction.md)
