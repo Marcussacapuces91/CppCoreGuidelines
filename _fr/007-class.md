@@ -1,4 +1,4 @@
-    ---
+---
 title: Classes et hiérarchies de classes
 ---
 
