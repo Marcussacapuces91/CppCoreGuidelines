@@ -1,3 +1,7 @@
+---
+title: Philosophie
+---
+
 # <a name="s-philosophy"></a>P : Philosophie
 
 Les règles de cette section sont très générales.
