@@ -49,13 +49,7 @@ En voici la liste :
 * [{{ p.title }}]({{ p.url }})
 {%- endfor %}
 
-* [Accueil](fr/001-main.md)
-* [Résumé](fr/002-abstract.md)
-* [Introduction](_r/003-introduction.md)
-* [Philosophie](fr/004-philosophy.md)
-
 ... *travail en cours*
-
 
 ## Contributions et licence
 
