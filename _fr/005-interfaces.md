@@ -1,3 +1,7 @@
+---
+title: Interfaces
+---
+
 # <a name="s-interfaces"></a>I: Interfaces
 
 Une interface est un contrat entre deux parties d’un programme. Décrire précisément ce qui est attendu d’un fournisseur de service et d’un utilisateur de ce service est essentiel.  
