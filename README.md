@@ -46,7 +46,7 @@ En voici la liste :
 <!-- Génération automatique de la liste des fichiers fr/ -->
 {% assign pages = site.fr | sort: "path" %}
 {%- for p in pages %}
-* [{{ p.title }}]({{ p.url }})
+* [{{ p.title }}](/CppCoreGuidelines{{ p.url }})
 {%- endfor %}
 
 ... *travail en cours*
