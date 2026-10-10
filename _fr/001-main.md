@@ -1,187 +1,183 @@
----
-title: Lignes Directrices Essentielles de C++
----
-
-# <a name="main">Lignes Directrices Essentielles de C++</a>
+# <a name="main"></a>Directives C++ Core
 
 14 juin 2026
 
-Éditeurs :
+Éditeurs :
 
 * [Bjarne Stroustrup](https://www.stroustrup.com)
 * [Herb Sutter](https://herbsutter.com/)
 
-Ceci est un document vivant, en amélioration continue.
-S'il s'agissait d'un projet open source (de code), ce serait la version 0.8.
-La copie, l'utilisation, la modification et la création d'œuvres dérivées de ce projet sont soumises à une licence de type MIT.
-Contribuer à ce projet exige l'acceptation d'une licence du contributeur. Voir le fichier joint [LICENSE](https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE) pour plus de détails.
-Nous mettons ce projet à disposition des « utilisateurs bienveillants » pour l'utiliser, le copier, le modifier et en dériver, dans l'espoir d'obtenir des retours constructifs.
+Il s'agit d'un document vivant en amélioration continue.
+S'il s'agissait d'un projet open‑source (code), cette version serait la 0.8.
+La copie, l'utilisation, la modification et la création d'œuvres dérivées de ce projet sont autorisées sous licence de type MIT.
+Contribuer à ce projet nécessite l'accord d'une licence de contributeur. Veuillez consulter le fichier [LICENSE](https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE) pour plus de détails.
+Nous rendons ce projet disponible aux « utilisateurs amicaux » afin qu'ils l'utilisent, le copient, le modifient et en dérivent, dans l'espoir de retours constructifs.
 
 Les commentaires et suggestions d'amélioration sont les bienvenus.
-Nous prévoyons de modifier et d'étendre ce document au fur et à mesure que notre compréhension s'améliore et que le langage ainsi que l'ensemble des bibliothèques disponibles progressent.
-Lors de vos commentaires, veuillez tenir compte de [l'introduction](003-introduction.md), qui présente nos objectifs et notre approche générale.
+Nous prévoyons de modifier et de mettre à jour ce document à mesure que notre compréhension, le langage et l'ensemble des bibliothèques disponibles s'améliorent.
+Lors de vos commentaires, veuillez noter [l'introduction](003-introduction.md) qui expose nos objectifs et notre approche générale.
 La liste des contributeurs est [ici](#ss-ack).
 
-Problèmes :
+Problèmes :
 
-* Les ensembles de règles n'ont pas encore été vérifiés de manière exhaustive pour leur exhaustivité, leur cohérence ou leur applicabilité.
-* Les triples points d'interrogation (???) indiquent des informations connues manquantes.
-* Mettre à jour les sections de références ; de nombreuses sources antérieures à C++11 sont désormais trop anciennes.
-* Pour une liste de tâches à faire plus ou moins à jour, voir : [À faire : Proto-règles non classées](003-introduction.md).
+* Les ensembles de règles n'ont pas été entièrement vérifiés pour exhaustivité, cohérence ou applicabilité.
+* Les tripespoints (???) indiquent des informations manquantes connues.
+* Mettez à jour les sections de référence ; de nombreuses sources pré‑C++11 sont trop anciennes.
+* Pour une liste de tâches plus ou moins à jour, consultez : [À faire : proto‑règles non classées](031-unclassified.md).
 
-Vous pouvez [lire une explication sur la portée et la structure de ce guide](002-abstract.md) ou passer directement à :
+Vous pouvez [lire une explication de la portée et de la structure de ce guide](002-abstract.md) ou passer directement à la lecture :
 
-* [In : Introduction](003-introduction.md)
-* [P : Philosophie](004-philosophy.md)
-* [I : Interfaces](#s-interfaces)
-* [F : Fonctions](#s-functions)
-* [C : Classes et hiérarchies de classes](#s-class)
-* [Enum : Énumérations](#s-enum)
-* [R : Gestion des ressources](#s-resource)
-* [ES : Expressions et instructions](#s-expr)
-* [Per : Performance](#s-performance)
-* [CP : Concurrence et parallélisme](#s-concurrency)
-* [E : Gestion des erreurs](#s-errors)
-* [Con : Constantes et immuabilité](#s-const)
-* [T : Modèles et programmation générique](#s-templates)
-* [CPL : Programmation de style C](#s-cpl)
-* [SF : Fichiers sources](#s-source)
-* [SL : Bibliothèque standard](#sl-the-standard-library)
+* [Dans : Introduction](003-introduction.md)
+* [P : Philosophie](004-philosophy.md)
+* [I : Interfaces](005-interfaces.md)
+* [F : Fonctions](006-functions.md)
+* [C : Classes et hiérarchies de classes](007-class.md)
+* [Enum : Énumérations](008-enum.md)
+* [R : Gestion des ressources](009-resource.md)
+* [ES : Expressions et déclarations](010-expr.md)
+* [Per : Performance](011-performance.md)
+* [CP : Concurrence et parallélisme](012-concurrency.md)
+* [E : Gestion des erreurs](013-errors.md)
+* [Con : Constantes et immuabilité](014-const.md)
+* [T : Modèles et programmation générique](015-templates.md)
+* [CPL : Programmation de style C](016-cpl.md)
+* [SF : Fichiers sources](017-source.md)
+* [SL : La bibliothèque standard](018-stdlib.md)
 
-Sections de soutien :
+Sections de soutien :
 
-* [A : Idées architecturales](#s-a)
-* [NR : Non-règles et mythes](#s-not)
-* [RF : Références](#s-references)
-* [Pro : Profils](#s-profile)
-* [GSL : Bibliothèque de support des directives](#s-gsl)
-* [NL : Suggestions de noms et de mise en page](#s-naming)
-* [FAQ : Réponses aux questions fréquemment posées](#s-faq)
-* [Appendice A : Bibliothèques](#s-libraries)
-* [Appendice B : Modernisation du code](#s-modernizing)
-* [Appendice C : Discussion](#s-discussion)
-* [Appendice D : Outils de support](#s-tools)
-* [Glossaire](#s-glossary)
-* [À faire : Proto-règles non classées](#s-unclassified)
+* [A : Idées architecturales](019-a.md)
+* [NR : Non‑règles et mythes](020-not.md)
+* [RF : Références](021-references.md)
+* [Pro : Profils](022-profile.md)
+* [GSL : Bibliothèque de support des directives](023-gsl.md)
+* [NL : Suggestions de nommage et d’agencement](024-naming.md)
+* [FAQ : Réponses aux questions fréquentes](025-faq.md)
+* [Annexe A : Bibliothèques](026-libraries.md)
+* [Annexe B : Modernisation du code](027-modernizing.md)
+* [Annexe C : Discussion](028-discussion.md)
+* [Annexe D : Outils de soutien](029-tools.md)
+* [Glossaire](030-glossary.md)
+* [À faire : proto‑règles non classées](031-unclassified.md)
 
-Vous pouvez consulter des règles sur des fonctionnalités linguistiques spécifiques :
+Vous pouvez consulter les règles pour les caractéristiques suivantes :
 
-* affectation :
-[types réguliers](#rc-regular) --
+* affectation :
+[taux réguliers](#rc-regular) --
 [préférer l'initialisation](#rc-initialize) --
 [copie](#rc-copy-semantic) --
 [déplacement](#rc-move-semantic) --
 [autres opérations](#rc-matched) --
 [par défaut](#rc-eqdefault)
-* `class` :
+* `class` :
 [données](#rc-org) --
 [invariant](#rc-struct) --
 [membres](#rc-member) --
-[assistants](#rc-helper) --
+[aides](#rc-helper) --
 [types concrets](#ss-concrete) --
-[constructeurs, = et destructeurs](#s-ctor) --
+[constructeurs, = et destructeurs](#s-ctor) --
 [hiérarchie](#ss-hier) --
 [opérateurs](#ss-overload)
-* `concept` :
+* `concept` :
 [règles](#ss-concepts) --
-[dans la programmation générique](#rt-raise) --
-[arguments de modèles](#rt-concepts) --
-[sémantique](#rt-low)
-* constructeur :
+[en programmation générique](#rt-raise) --
+[argements de modèles](#rt-concepts) --
+[sémantiques](#rt-low)
+* constructeur :
 [invariant](#rc-struct) --
 [établir l'invariant](#rc-ctor) --
 [`throw`](#rc-throw) --
 [par défaut](#rc-default0) --
 [non nécessaire](#rc-default) --
 [`explicit`](#rc-explicit) --
-[délégué](#rc-delegating) --
+[delegating](#rc-delegating) --
 [`virtual`](#rc-ctor-virtual)
-* classe dérivée :
+* `class` dérivée :
 [quand l'utiliser](#rh-domain) --
 [comme interface](#rh-abstract) --
 [destructeurs](#rh-dtor) --
 [copie](#rh-copy) --
-[accesseurs](#rh-get) --
+[getters et setters](#rh-get) --
 [héritage multiple](#rh-mi-interface) --
-[surcharge](#rh-using) --
-[troncature](#rc-copy-virtual) --
+[chargement d'opérateurs](#rh-using) --
+[slicing](#rc-copy-virtual) --
 [`dynamic_cast`](#rh-dynamic_cast)
-* destructeur :
+* destructeur :
 [et constructeurs](#rc-matched) --
-[quand est-il nécessaire ?](#rc-dtor) --
+[quand nécessaire ?](#rc-dtor) --
 [ne doit pas échouer](#rc-dtor-fail)
-* exception :
-[erreurs](#s-errors) --
+* exception :
+[erreurs](013-errors.md) --
 [`throw`](#re-throw) --
-[pour les erreurs uniquement](#re-errors) --
+[pour erreurs uniquement](#re-errors) --
 [`noexcept`](#re-noexcept) --
 [minimiser `try`](#re-catch) --
-[et si pas d'exceptions ?](#re-no-throw-codes)
-* `for` :
-[range-for et for](#res-for-range) --
+[quand aucune exception ?](#re-no-throw-codes)
+* `for` :
+[for de plage et for](#res-for-range) --
 [for et while](#res-for-while) --
-[initialiseur de for](#res-for-init) --
+[for initialiseur](#res-for-init) --
 [corps vide](#res-empty) --
 [variable de boucle](#res-loop-counter) --
-[type de variable de boucle ???](#res-??? )
-* fonction :
+[type de variable de boucle ???](#res-???)
+* fonction :
 [nommage](#rf-package) --
-[opération unique](#rf-logical) --
-[sans exception](#rf-noexcept) --
+[une seule opération](#rf-logical) --
+[sans throw](#rf-noexcept) --
 [arguments](#rf-smart) --
-[passage des arguments](#rf-conventional) --
-[valeurs de retour multiples](#rf-out-multi) --
+[passage d'arguments](#rf-conventional) --
+[plusieurs valeurs de retour](#rf-out-multi) --
 [pointeurs](#rf-return-ptr) --
 [lambdas](#rf-capture-vs-overload)
-* `inline` :
-[petites fonctions](#rf-inline) --
+* `inline` :
+[fonctions petites](#rf-inline) --
 [dans les en-têtes](#rs-inline)
-* initialisation :
+* initialisation :
 [toujours](#res-always) --
 [préférer `{}`](#res-list) --
 [lambdas](#res-lambda-init) --
-[initialiseurs de membres par défaut](#rc-in-class-initializer) --
+[initialiseurs par défaut des membres](#rc-in-class-initializer) --
 [membres de classe](#rc-initialize) --
 [fonctions de fabrique](#rc-factory)
-* expression lambda :
+* expression lambda :
 [quand l'utiliser](#ss-lambdas)
-* opérateur :
+* opérateur :
 [conventionnel](#ro-conventional) --
 [éviter les opérateurs de conversion](#ro-conversion) --
 [et lambdas](#ro-lambda)
-* `public`, `private` et `protected` :
-[masquage de l'information](#rc-private) --
+* `public`, `private`, et `protected` :
+[masquage d'information](#rc-private) --
 [cohérence](#rh-public) --
 [`protected`](#rh-protected)
-* `static_assert` :
+* `static_assert` :
 [vérification à la compilation](#rp-compile-time) --
 [et concepts](#rt-check-class)
-* `struct` :
-[pour organiser les données](#rc-org) --
-[utiliser si pas d'invariant](#rc-struct) --
+* `struct` :
+[organisation de données](#rc-org) --
+[utiliser s'il n'y a pas d'invariant](#rc-struct) --
 [pas de membres privés](#rc-class)
-* `template` :
+* `template` :
 [abstraction](#rt-raise) --
 [conteneurs](#rt-cont) --
 [concepts](#rt-concepts)
-* `unsigned` :
+* `unsigned` :
 [et signé](#res-mix) --
-[manipulation de bits](#res-unsigned)
-* `virtual` :
+[manipulation bit à bit](#res-unsigned)
+* `virtual` :
 [interfaces](#ri-abstract) --
-[pas `virtual`](#rc-concrete) --
+[pas de `virtual`](#rc-concrete) --
 [destructeur](#rc-dtor-virtual) --
-[jamais échouer](#rc-dtor-fail)
+[ne jamais échouer](#rc-dtor-fail)
 
-Vous pouvez consulter les concepts de conception utilisés pour exprimer les règles :
+Vous pouvez consulter les concepts de conception utilisés pour exprimer les règles :
 
-* assertion : ???
-* error : ???
-* exception : garantie d'exception (???)
-* failure : ???
-* invariant : ???
-* leak : ???
-* library : ???
-* precondition : ???
-* postcondition : ???
-* resource : ???
+* assertion : ???
+* erreur : ???
+* exception : garantie d'exception (???) 
+* échec : ???
+* invariant : ???
+* fuite : ???
+* bibliothèque : ???
+* précondition : ???
+* postcondition : ???
+* ressource : ???
