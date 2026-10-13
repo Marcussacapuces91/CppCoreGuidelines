@@ -12,3 +12,4 @@ scripts/python/*.pyc
 .DS_Store
 
 _guidelines/*.md5
+*.md5
