@@ -2,28 +2,28 @@
 
 14 juin 2026  
 
-**Éditeurs :**
+**Éditeurs :**
 
 * [Bjarne Stroustrup](https://www.stroustrup.com)  
 * [Herb Sutter](https://herbsutter.com/)
 
 Ce document est vivant et en amélioration continue.  
-S’il s’agissait d’un projet open‑source (code), il aurait été la version 0.8.  
-La copie, l’utilisation, la modification et la création d’œuvres dérivées à partir de ce projet sont autorisées sous une licence de type MIT.  
-Contribuer à ce projet requiert l’acceptation d’une licence de contributeur. Voir le fichier [LICENSE](https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE) joint pour plus de détails.  
-Nous mettons ce projet à disposition des « utilisateurs amicaux » afin qu’ils l’utilisent, le copient, le modifient et en dérivent, dans l’espoir d’obtenir des retours constructifs.
+S'il s'agissait d'un projet open‑source (code), il aurait été la version 0.8.  
+La copie, l'utilisation, la modification et la création d'œuvres dérivées à partir de ce projet sont autorisées sous une licence de type MIT.  
+Contribuer à ce projet requiert l'acceptation d'une licence de contributeur. Voir le fichier [LICENSE](https://github.com/isocpp/CppCoreGuidelines/blob/master/LICENSE) joint pour plus de détails.  
+Nous mettons ce projet à disposition des « utilisateurs amicaux » afin qu'ils l'utilisent, le copient, le modifient et en dérivent, dans l'espoir d'obtenir des retours constructifs.
 
-Les commentaires et suggestions d’améliorations sont les bienvenus.  
-Nous prévoyons de modifier et d’étendre ce document à mesure que notre compréhension s’améliore ainsi que le langage et l’ensemble des bibliothèques disponibles.  
-Lors de vos commentaires, veuillez vous référer à [l’introduction](003-introduction.md) qui expose nos objectifs et notre approche générale.  
+Les commentaires et suggestions d'améliorations sont les bienvenus.  
+Nous prévoyons de modifier et d'étendre ce document à mesure que notre compréhension s'améliore ainsi que le langage et l'ensemble des bibliothèques disponibles.  
+Lors de vos commentaires, veuillez vous référer à [l'introduction](003-introduction.md) qui expose nos objectifs et notre approche générale.  
 La liste des contributeurs se trouve [ici](021-references.md#ss-ack) @TODO-LINK
 
-**Problèmes :**
+**Problèmes :**
 
-* Les ensembles de règles n’ont pas été entièrement vérifiés quant à leur exhaustivité, cohérence ou applicabilité.  
-* Les triples points d’interrogation (???) indiquent des informations manquantes connues.  
-* Mettez à jour les sections de références ; de nombreuses sources antérieures à C++11 sont trop anciennes.  
-* Pour une liste de tâches à jour (plus ou moins), consultez : [À faire : Règles proto non classifiées](031-unclassified.md).
+* Les ensembles de règles n'ont pas été entièrement vérifiés quant à leur exhaustivité, cohérence ou applicabilité.  
+* Les triples points d'interrogation (???) indiquent des informations manquantes connues.  
+* Mettez à jour les sections de références ; de nombreuses sources antérieures à C++11 sont trop anciennes.
+* Pour une liste de tâches à jour (plus ou moins), consultez : [À faire : Règles proto non classifiées](031-unclassified.md).
 
 Vous pouvez [lire une explication de la portée et de la structure de ce Guide](002-abstract.md) ou simplement y plonger immédiatement :
 
@@ -44,7 +44,7 @@ Vous pouvez [lire une explication de la portée et de la structure de ce Guide](
 * [SF : Fichiers source](017-source.md)  
 * [SL : Bibliothèque standard](#sl-the-standard-library)
 
-**Sections d’appui :**
+**Sections d'appui :**
 
 * [A : Idées architecturales](019-a.md)  
 * [NR : Non‑Règles et mythes](020-not.md)  
@@ -56,7 +56,7 @@ Vous pouvez [lire une explication de la portée et de la structure de ce Guide](
 * [Annexe A : Bibliothèques](026-libraries.md)  
 * [Annexe B : Modernisation du code](027-modernizing.md)  
 * [Annexe C : Discussion](028-discussion.md)  
-* [Annexe D : Outils d’aide](029-tools.md)  
+* [Annexe D : Outils d'aide](029-tools.md)  
 * [Glossaire](030-glossary.md)  
 * [À faire : Règles proto non classifiées](031-unclassified.md)
 
