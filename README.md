@@ -43,7 +43,9 @@ Pour en faciliter la lecture aux francophones, le document original en anglais a
 
 En voici la liste :
 
-* Traduction avec `gpt-oss_120b:cloud`: [Main](./_fr/gpt-oss_120b-cloud/001.main.md)
+* Traduction avec `gpt-oss_120b:cloud`: [Main](./_fr/gpt-oss_120b-cloud/001-main.md)
+* Traduction avec `gpt-oss_20b:cloud` (évidement de qualité moyenne) : [Main](./_fr/gpt-oss_20b-cloud/001-main.md)
+* Traduction avec `qwen3.8` (pour comparaison) : [Main](./_fr/qwen3.8/001-main.md)
 
 <!-- Génération automatique de la liste des fichiers fr/ -->
 {% assign pages = site.fr | sort: "path" %}
