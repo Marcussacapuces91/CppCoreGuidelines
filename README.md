@@ -43,6 +43,8 @@ Pour en faciliter la lecture aux francophones, le document original en anglais a
 
 En voici la liste :
 
+* Traduction avec `gpt-oss_120b:cloud`: [Main](./_fr/gpt-oss_120b-cloud/001.main.md)
+
 <!-- Génération automatique de la liste des fichiers fr/ -->
 {% assign pages = site.fr | sort: "path" %}
 {%- for p in pages %}
