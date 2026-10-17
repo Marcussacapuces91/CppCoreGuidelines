@@ -47,14 +47,6 @@ En voici la liste :
 * Traduction avec `gpt-oss_20b` (évidement de qualité moyenne) : [Main](./_fr/gpt-oss_20b/001-main.md)
 * Traduction avec `qwen3.8` (pour comparaison) : [Main](./_fr/qwen3.8/001-main.md)
 
-<!-- Génération automatique de la liste des fichiers fr/ -->
-{% assign pages = site.fr | sort: "path" %}
-{%- for p in pages %}
-* [{{ p.title }}](/CppCoreGuidelines{{ p.url }})
-{%- endfor %}
-
-... *travail en cours*
-
 ## Contributions et licence
 
 Les commentaires et suggestions d'amélioration sont les bienvenus. Nous prévoyons de modifier et d'étendre ce document au fur et à mesure que notre compréhension s'améliorera et que le langage et l'ensemble des bibliothèques disponibles évolueront. Plus de détails sont disponibles dans [CONTRIBUTING](./CONTRIBUTING.md) et [LICENSE](./LICENSE) (*note* : j'ai volontairement conservé la licence du dépôt original).
