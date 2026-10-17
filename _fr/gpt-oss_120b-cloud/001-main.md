@@ -16,7 +16,7 @@ Nous mettons ce projet à disposition des « utilisateurs amicaux » afin qu
 Les commentaires et suggestions d'améliorations sont les bienvenus.  
 Nous prévoyons de modifier et d'étendre ce document à mesure que notre compréhension s'améliore ainsi que le langage et l'ensemble des bibliothèques disponibles.  
 Lors de vos commentaires, veuillez vous référer à [l'introduction](003-introduction.md) qui expose nos objectifs et notre approche générale.  
-La liste des contributeurs se trouve [ici](021-references.md#ss-ack) @TODO-LINK
+La liste des contributeurs se trouve [ici](021-references.md#ss-ack)
 
 **Problèmes :**
 
