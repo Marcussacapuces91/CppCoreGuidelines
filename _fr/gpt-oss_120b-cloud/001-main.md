@@ -1,3 +1,7 @@
+---
+permalink: index.html
+----
+
 # <a name="main"></a>Lignes Directrices essentielles du C++
 
 14 juin 2026  
