@@ -29,7 +29,7 @@ Considérez ces règles comme des idéaux pour le nouveau code, des opportunité
 
 Prenez le temps de comprendre les implications d'une règle de ligne directrice sur votre programme.
 
-Ces lignes directrices sont conçues selon le principe du « sous‑ensemble du sur‑ensemble » ([Stroustrup05](032-bibliography.md#Stroustrup05)). Elles ne définissent pas simplement un sous‑ensemble de C++ à utiliser (pour la fiabilité, la sécurité, les performances, ou autre). Au contraire, elles recommandent fortement l'utilisation de quelques « extensions » simples ([composants de bibliothèque](#gsl-guidelines-support-library)) qui rendent redondante l'utilisation des caractéristiques les plus sujettes aux erreurs du C++, de façon à pouvoir les interdire (dans notre ensemble de règles). @TODO-LINK
+Ces lignes directrices sont conçues selon le principe du « sous‑ensemble du sur‑ensemble » ([Stroustrup05](032-bibliography.md#Stroustrup05)). Elles ne définissent pas simplement un sous‑ensemble de C++ à utiliser (pour la fiabilité, la sécurité, les performances, ou autre). Au contraire, elles recommandent fortement l'utilisation de quelques « extensions » simples ([composants de bibliothèque](023-gsl.md#s-gsl)) qui rendent redondante l'utilisation des caractéristiques les plus sujettes aux erreurs du C++, de façon à pouvoir les interdire (dans notre ensemble de règles).
 
 Les règles mettent l'accent sur la sécurité de type statique et la sécurité des ressources. Pour cette raison, elles soulignent les possibilités de contrôle de limites, d'éviter la déréférencement de `nullptr`, d'éviter les pointeurs pendants, ainsi que l'utilisation systématique des exceptions (via RAII). En partie pour atteindre cet objectif et en partie pour réduire le code obscur comme source d'erreurs, les règles mettent également l'accent sur la simplicité et sur le fait de masquer la complexité nécessaire derrière des interfaces bien spécifiées.
 
@@ -76,7 +76,7 @@ Donc, nous devons sous‑sélectionner pour répondre à une variété de besoin
 
 Nous voulons des lignes directrices qui aident un grand nombre de personnes, rendent le code plus uniforme et encouragent fortement les gens à moderniser leur code. Nous souhaitons encourager les meilleures pratiques, plutôt que de laisser tout au choix individuel et aux pressions de la gestion. L'idéal est d'utiliser toutes les règles ; cela apporte les plus grands bénéfices.
 
-Cela aboutit à plusieurs dilemmes. Nous essayons de les résoudre en utilisant des outils. Chaque règle possède une section **Application** (Enforcement) listant des idées d'application. L'application peut se faire par révision de code, par analyse statique, par le compilateur, ou par des vérifications à l'exécution. Dans la mesure du possible, nous préférons les contrôles « mécaniques » (les humains sont lents, imprécis et s'ennuient rapidement) et les vérifications statiques. Les vérifications à l'exécution ne sont proposées que rarement lorsqu'aucune alternative n'existe ; nous ne voulons pas introduire de « gonflement distribué ». Le cas échéant, nous étiquetons une règle (dans la section **Application**) avec le nom d'un groupe de règles connexes (appelés « profils »). Une règle peut faire partie de plusieurs profils, ou d'aucun. Pour commencer, nous avons quelques profils correspondant à des besoins courants (désirs, idéaux) :
+Cela aboutit à plusieurs dilemmes. Nous essayons de les résoudre en utilisant des outils. Chaque règle possède une section **Application** (*Enforcement*) listant des idées d'application. L'application peut se faire par révision de code, par analyse statique, par le compilateur, ou par des vérifications à l'exécution. Dans la mesure du possible, nous préférons les contrôles « mécaniques » (les humains sont lents, imprécis et s'ennuient rapidement) et les vérifications statiques. Les vérifications à l'exécution ne sont proposées que rarement lorsqu'aucune alternative n'existe ; nous ne voulons pas introduire de « gonflement distribué ». Le cas échéant, nous étiquetons une règle (dans la section **Application**) avec le nom d'un groupe de règles connexes (appelés « Profils »). Une règle peut faire partie de plusieurs profils, ou d'aucun. Pour commencer, nous avons quelques profils correspondant à des besoins courants (désirs, idéaux) :
 
 * **type** : Pas de violations de type (réinterpréter un `T` comme un `U` via des casts, unions ou varargs)
 * **bounds** : Pas de violations de limites (accès au‑delà de la portée d'un tableau)
@@ -105,7 +105,7 @@ Chaque règle (ligne directrice, suggestion) peut comporter plusieurs parties :
 * Un numéro de référence de règle — par ex., **C.7** (la 7ᵉ règle liée aux classes).
   Comme les sections principales ne sont pas intrinsèquement ordonnées, nous utilisons des lettres comme première partie d'un « numéro de référence de règle ». Nous laissons des intervalles dans la numérotation afin de minimiser les « perturbations » lorsque nous ajoutons ou supprimons des règles.
 * **Raisons** (justifications) — parce que les programmeurs ont du mal à suivre des règles qu'ils ne comprennent pas
-* **Exemples** — parce que les règles sont difficiles à comprendre de manière abstraite ; ils peuvent être positifs ou négatifs
+* **Exemples** — parce que les règles sont difficiles à comprendre de manière abstraite ; ils peuvent être `bon` ou `mauvais`
 * **Alternatives** — pour les règles du type « ne faites pas cela »
 * **Exceptions** — nous privilégions les règles générales simples. Cependant, de nombreuses règles s'appliquent largement, mais pas universellement, donc les exceptions doivent être listées
 * **Application** — idées sur la façon dont la règle pourrait être vérifiée « mécaniquement »
@@ -163,4 +163,4 @@ Sections d'appui :
 
 Ces sections ne sont pas orthogonales.
 
-Chaque section (par ex., « P » pour « Philosophie ») et chaque sous‑section (par ex., « C.hier » pour « Class Hierarchies (OOP) ») possède une abréviation pour faciliter la recherche et la référence. Les abréviations des sections principales sont également utilisées dans les numéros de règle (par ex., « C.11 » pour « Make concrete types regular »).
+Chaque section (par ex., « P » pour « Philosophie ») et chaque sous‑section (par ex., « C.hier » pour « Hiérarchie de Classes (OOP) ») possède une abréviation pour faciliter la recherche et la référence. Les abréviations des sections principales sont également utilisées dans les numéros de règle (par ex., « C.11 » pour « Rendre les types concrets réguliers »).
