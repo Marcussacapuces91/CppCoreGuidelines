@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /CppCoreGuidelines/_fr/gpt-oss_120b-cloud/index.html
-----
+---
 
 # <a name="main"></a>Lignes Directrices essentielles du C++
 
