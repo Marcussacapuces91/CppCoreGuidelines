@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Lignes Directrices essentielles du C++
 ---
 
@@ -28,42 +27,42 @@ La liste des contributeurs se trouve [ici](021-references.md#ss-ack)
 * Les ensembles de règles n'ont pas été entièrement vérifiés quant à leur exhaustivité, cohérence ou applicabilité.  
 * Les triples points d'interrogation (???) indiquent des informations manquantes connues.  
 * Mettez à jour les sections de références ; de nombreuses sources antérieures à C++11 sont trop anciennes.
-* Pour une liste de tâches à jour (plus ou moins), consultez : [À faire : Règles proto non classifiées](031-unclassified.md).
+* Pour une liste de tâches à jour (plus ou moins), consultez : [À faire : Proto-Règles non classées](031-unclassified.md).
 
-Vous pouvez [lire une explication de la portée et de la structure de ce Guide](002-abstract.md) ou simplement y plonger immédiatement :
+Vous pouvez [lire une explication de la portée et de la structure de ce Guide](002-abstract.md) ou simplement y plonger immédiatement :
 
-* [In : Introduction](003-introduction.md)  
-* [P : Philosophie](004-philosophy.md)  
-* [I : Interfaces](005-interfaces.md)  
-* [F : Fonctions](006-functions.md)  
-* [C : Classes et Hiérarchies de Classes](007-class.md)  
-* [Enum : Énumérations](008-enum.md)  
-* [R : Gestion des Ressources](009-resource.md)  
-* [ES : Expressions et Instructions](010-expr.md)  
-* [Per : Performance](011-performance.md)  
-* [CP : Concurrence et Parallélisme](012-concurrency.md)  
-* [E : Gestion des Erreurs](013-errors.md)  
-* [Con : Constantes et Immutabilité](014-const.md)  
-* [T : Modèles et Programmation Générique](015-templates.md)  
-* [CPL : Programmation de Style C](016-cpl.md)  
-* [SF : Fichiers Source](017-source.md)  
+* [In : Introduction](003-introduction.md)
+* [P : Philosophie](004-philosophy.md)
+* [I : Interfaces](005-interfaces.md)
+* [F : Fonctions](006-functions.md)
+* [C : Classes et Hiérarchies de Classes](007-class.md)
+* [Enum : Énumérations](008-enum.md)
+* [R : Gestion des Ressources](009-resource.md)
+* [ES : Expressions et Instructions](010-expr.md)
+* [Per : Performance](011-performance.md)
+* [CP : Concurrence et Parallélisme](012-concurrency.md)
+* [E : Gestion des Erreurs](013-errors.md)
+* [Con : Constantes et Immutabilité](014-const.md)
+* [T : Modèles et Programmation Générique](015-templates.md)
+* [CPL : Programmation de Style C](016-cpl.md)
+* [SF : Fichiers Source](017-source.md)
 * [SL : Bibliothèque Standard (stdlib)](018-stdlib.md)
 
 **Sections d'appui :**
 
-* [A : Idées architecturales](019-a.md)  
-* [NR : Non‑Règles et mythes](020-not.md)  
-* [RF : Références](021-references.md)  
-* [Pro : Profils](022-profile.md)  
-* [GSL : Bibliothèque de soutien aux directives](023-gsl.md)  
-* [NL : Suggestions de nommage et de mise en page](024-naming.md)  
-* [FAQ : Réponses aux questions fréquentes](025-faq.md)  
-* [Annexe A : Bibliothèques](026-libraries.md)  
-* [Annexe B : Modernisation du code](027-modernizing.md)  
-* [Annexe C : Discussion](028-discussion.md)  
-* [Annexe D : Outils d'aide](029-tools.md)  
-* [Glossaire](030-glossary.md)  
-* [À faire : Règles proto non classifiées](031-unclassified.md)
+* [A : Idées architecturales](019-a.md)
+* [NR : Non‑Règles et mythes](020-not.md)
+* [RF : Références](021-references.md)
+* [Pro : Profils](022-profile.md)
+* [GSL : Bibliothèque de soutien aux directives](023-gsl.md)
+* [NL : Suggestions de nommage et de mise en page](024-naming.md)
+* [FAQ : Réponses aux questions fréquentes](025-faq.md)
+* [Annexe A : Bibliothèques](026-libraries.md)
+* [Annexe B : Modernisation du code](027-modernizing.md)
+* [Annexe C : Discussion](028-discussion.md)
+* [Annexe D : Outils d'aide](029-tools.md)
+* [Glossaire](030-glossary.md)
+* [À faire : Proto-Règles non classées](031-unclassified.md)
 
 Vous pouvez consulter des règles pour des caractéristiques spécifiques du langage :
 
@@ -80,10 +79,10 @@ Vous pouvez consulter des règles pour des caractéristiques spécifiques du lan
 [invariant](007-class.md#rc-struct) --
 [membres](007-class.md#rc-member) --
 [aides](007-class.md#rc-helper) --
-[types concrets](007-class.md#ss-concrete) @TODO-LINK --
+[types concrets](007-class.md#ss-concrete) --
 [constructeurs, =, et destructeurs](007-class.md) --
-[hiérarchie](007-class.md#ss-hier) @TODO-LINK --
-[opérateurs](007-class.md#ss-overload) @TODO-LINK
+[hiérarchie](007-class.md#ss-hier) --
+[opérateurs](007-class.md#ss-overload)
 
 * `concept` :
 [règles](015-templates.md#ss-concepts) --
@@ -194,13 +193,13 @@ Vous pouvez consulter des règles pour des caractéristiques spécifiques du lan
 
 Vous pouvez consulter les concepts de conception utilisés pour exprimer les règles :
 
-* assertion : ???  
-* erreur : ???  
-* exception : garantie d'exception (???)  
-* échec : ???  
-* invariant : ???  
-* fuite : ???  
-* bibliothèque : ???  
-* précondition : ???  
-* postcondition : ???  
+* assertion : ???
+* erreur : ???
+* exception : garantie d'exception (???)
+* échec : ???
+* invariant : ???
+* fuite : ???
+* bibliothèque : ???
+* précondition : ???
+* postcondition : ???
 * ressource : ???
