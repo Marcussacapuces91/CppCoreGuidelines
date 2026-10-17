@@ -4,12 +4,12 @@ Il s'agit d'un ensemble de lignes directrices essentielles pour le C++ moderne (
 
 Résumé de l'introduction :
 
-* [In.target : Public cible](003-introduction.md#ss-readers)
-* [In.aims : Objectifs](003-introduction.md#ss-aims)
-* [In.not : Ce qui n'est pas visé](003-introduction.md#ss-non)
-* [In.force : Application](003-introduction.md#ss-force)
-* [In.struct : Structure de ce document](003-introduction.md#ss-struct)
-* [In.sec : Sections principales](003-introduction.md#ss-sec)
+* [In.target : Public cible](#ss-readers)
+* [In.aims : Objectifs](#ss-aims)
+* [In.not : Ce qui n'est pas visé](#ss-non)
+* [In.force : Application](#ss-force)
+* [In.struct : Structure de ce document](#ss-struct)
+* [In.sec : Sections principales](#ss-sec)
 
 ## <a name="ss-readers"></a>In.target : Public cible
 
@@ -132,34 +132,34 @@ Ce n'est pas un manuel de langage. Il se veut utile, plutôt que complet, entiè
 * [P : Philosophie](004-philosophy.md)
 * [I : Interfaces](005-interfaces.md)
 * [F : Fonctions](006-functions.md)
-* [C : Classes et hiérarchies de classes](007-class.md)
+* [C : Classes et Hiérarchies de Classes](007-class.md)
 * [Enum : Énumérations](008-enum.md)
-* [R : Gestion des ressources](009-resource.md)
-* [ES : Expressions et instructions](010-expr.md)
+* [R : Gestion des Ressources](009-resource.md)
+* [ES : Expressions et Instructions](010-expr.md)
 * [Per : Performance](011-performance.md)
-* [CP : Concurrence et parallélisme](012-concurrency.md)
-* [E : Gestion des erreurs](013-errors.md)
-* [Con : Constantes et immutabilité](014-const.md)
-* [T : Modèles et programmation générique](015-templates.md)
-* [CPL : Programmation de style C](016-cpl.md)
-* [SF : Fichiers source](017-source.md)
-* [SL : Bibliothèque standard](#sl-the-standard-library) @TODO-LINK
+* [CP : Concurrence et Parallélisme](012-concurrency.md)
+* [E : Gestion des Erreurs](013-errors.md)
+* [Con : Constantes et Immutabilité](014-const.md)
+* [T : Modèles et Programmation Générique](015-templates.md)
+* [CPL : Programmation de Style C](016-cpl.md)
+* [SF : Fichiers Source](017-source.md)
+* [SL : Bibliothèque Standard (stdlib)](018-stdlib.md)
 
 Sections d'appui :
 
-* [A : Idées architecturales](019-a.md)
-* [NR : Non‑règles et mythes](020-not.md)
+* [A : Idées Architecturales](019-a.md)
+* [NR : Non‑Règles et Mythes](020-not.md)
 * [RF : Références](021-references.md)
 * [Pro : Profils](022-profile.md)
-* [GSL : Bibliothèque d'appui aux lignes directrices](#gsl-guidelines-support-library) @TODO-LINK
-* [NL : Suggestions de nommage et de mise en page](024-naming.md)
-* [FAQ : Réponses aux questions fréquentes](025-faq.md)
+* [GSL : Bibliothèque d'Appui aux Lignes Directrices](023-gsl.md)
+* [NL : Nommage et Mise en Page](024-naming.md)
+* [FAQ : Réponses aux Questions Fréquentes](025-faq.md)
 * [Annexe A : Bibliothèques](026-libraries.md)
-* [Annexe B : Modernisation du code](027-modernizing.md)
+* [Annexe B : Modernisation du Code](027-modernizing.md)
 * [Annexe C : Discussion](028-discussion.md)
-* [Annexe D : Outils de soutien](029-tools.md)
+* [Annexe D : Outils de Soutien](029-tools.md)
 * [Glossaire](030-glossary.md)
-* [À faire : règles proto non classifiées](031-unclassified.md)
+* [À faire : Proto-règles non classées](031-unclassified.md)
 
 Ces sections ne sont pas orthogonales.
 
