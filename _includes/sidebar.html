@@ -20,17 +20,41 @@
         <label class="tgl-btn" data-tg-off="Syntaxe Active" data-tg-on="Syntaxe Neutre" for="hl_button"></label>
       </div>
 
-<!-- Génération automatique de la liste des fichiers fr/ -->
-    {% assign pages = site.fr | sort: "path" %}
-    {% for p in pages %}
-        <!-- {{ p }} -->
-      <a class="sidebar-nav-item active" href="/CppCoreGuidelines{{ p.url }}">{{ p.title  }}</a>
-        {% if p.slug == "001-main" %}
-      <br/>
-        {%- endif -%}
-    {% endfor %}
-{% endif %}
-      
+      <ul>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/003-introduction.html">In : Introduction</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/004-philosophy.html">P : Philosophie</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/005-interfaces.html">I : Interfaces</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/006-functions.html">F : Fonctions</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/007-class.html">C : Classes et hiérarchies de classes</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/008-enum.html">Enum : Énumérations</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/009-resource.html">R : Gestion des ressources</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/010-expr.html">ES : Expressions et instructions</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/011-performance.html">Per : Performance</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/012-concurrency.html">CP : Concurrence et parallélisme</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/013-errors.html">E : Gestion des erreurs</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/014-const.html">Con : Constantes et immutabilité</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/015-templates.html">T : Modèles et programmation générique</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/016-cpl.html">CPL : Programmation de style C</a></li>
+        <li><a href="/CppCoreGuidelines/_fr/gpt-oss_120b-cloud/017-source.html">SF : Fichiers source</a></li>
+        <li><a href="018-stdlib.html">SL : Bibliothèque standard (stdlib)</a>
+        </li>
+    </ul>        
+In : Introduction
+P : Philosophie
+I : Interfaces
+F : Fonctions
+C : Classes et hiérarchies de classes
+Enum : Énumérations
+R : Gestion des ressources
+ES : Expressions et instructions
+Per : Performance
+CP : Concurrence et parallélisme
+E : Gestion des erreurs
+Con : Constantes et immutabilité
+T : Modèles et programmation générique
+CPL : Programmation de style C
+SF : Fichiers source
+SL : Bibliothèque standard @TODO-LINK      
 <!--
       <br/>
       <a class="sidebar-nav-item active" href="#s-a">A: Architectural Ideas</a>
