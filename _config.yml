@@ -1,2 +1,2 @@
 include: [index.html, CppCoreGuidelines.md, _fr]
-exclude: [guidelines, docs, talks, Gemfile, params.json]
+exclude: [_guidelines, docs, talks, Gemfile, params.json]
