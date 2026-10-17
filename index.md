@@ -9,17 +9,9 @@ layout: default
     Comme tout les textes de ce site sont rendus manuellement, vous devez vous référer au dépôt <a href="https://github.com/isocpp/CppCoreGuidelines">C++ Core Guidelines</a> pour la dernière version à jour.
 </p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-            <!--
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/tkruse/CppCoreGuidelines/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/tkruse/CppCoreGuidelines/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-            -->
-        </header>
-    </div>
+{% include_relative README.md %}
 
+<!--
 {% capture readme %}{% include_relative README.md %}{% endcapture %}
 {{ readme | markdownify }}
+-->
