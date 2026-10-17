@@ -1,3 +1,7 @@
+---
+title: Titre
+---
+
 [![C++ Core Guidelines](cpp_core_guidelines_logo_text.png)](http://Marcussacapuces91.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
 >"Within C++ is a smaller, simpler, safer language struggling to get out."
