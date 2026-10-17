@@ -155,7 +155,7 @@ Vous pouvez consulter des règles pour des caractéristiques spécifiques du lan
 [fonctions usine](007-class.md#rc-factory)
 
 * expression lambda :
-[quand l'utiliser](007-class.md#ss-lambdas) @TODO-LINK
+[quand l'utiliser](007-class.md#ss-lambdas)
 
 * opérateur :
 [conventionnel](007-class.md#ro-conventional) --
