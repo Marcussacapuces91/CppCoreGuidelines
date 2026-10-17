@@ -1,7 +1,2 @@
 include: [index.html, CppCoreGuidelines.md, _fr]
 exclude: [guidelines, docs, talks, Gemfile, params.json]
-
-collections:
-  fr:
-    sort_by: path
-    permalink: /_fr/:path/:name
