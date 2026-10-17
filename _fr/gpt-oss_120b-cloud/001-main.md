@@ -1,4 +1,5 @@
 ---
+layout: default
 permalink: /CppCoreGuidelines/_fr/gpt-oss_120b-cloud/index.html
 ----
 
