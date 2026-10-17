@@ -1,5 +1,5 @@
 ---
-permalink: index.html
+permalink: /CppCoreGuidelines/_fr/gpt_oss_120b-cloud/index.html
 ----
 
 # <a name="main"></a>Lignes Directrices essentielles du C++
