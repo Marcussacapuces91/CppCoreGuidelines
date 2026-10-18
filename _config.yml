@@ -1,2 +1,6 @@
-include: [index.md, CppCoreGuidelines.md, _fr]
-exclude: [_guidelines, docs, talks, Gemfile, params.json]
+include: [index.html, CppCoreGuidelines.md, _guidelines, _fr]
+exclude: [docs, talks, Gemfile, params.json]
+
+# URL du dépôt et branche par défaut
+repository_url: "https://github.com/Marcussacapuces91/CppCoreGuidelines"
+repository_branch: "master"
