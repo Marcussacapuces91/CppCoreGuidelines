@@ -44,7 +44,7 @@ Pour en faciliter la lecture aux francophones, le document original en anglais a
 En voici la liste :
 
 * Traduction avec [`gpt-oss_120b:cloud`](_fr/gpt-oss_120b-cloud/)
-* Traduction avec [`gpt-oss_20b:cloud`](_fr/gpt-oss_20b/), évidement de qualité moyenne
+* Traduction avec [`gpt-oss_20b:cloud`](_fr/gpt-oss_20b-cloud/), évidement de qualité moyenne
 * Traduction avec [`qwen3.8`](_fr/qwen3.8/) pour comparaison
 
 ## Contributions et licence
