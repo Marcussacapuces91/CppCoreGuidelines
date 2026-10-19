@@ -1,4 +1,4 @@
-include: [index.html, CppCoreGuidelines.md, _guidelines, _fr]
+include: [index.html, CppCoreGuidelines.md, _guidelines, _fr, google360d10608477574b.html]
 exclude: [docs, talks, Gemfile, params.json]
 
 # URL du dépôt et branche par défaut
