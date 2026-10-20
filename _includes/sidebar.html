@@ -1,11 +1,14 @@
 <div class="sidebar">
+  <a class="fork-me" href="https://github.com/Marcussacapuces91/CppCoreGuidelines/fork" target="_blank" rel="noopener noreferrer" aria-label="Fork this project on GitHub">
+    <img src="https://github.com/img/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+  </a>
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <img src="/CppCoreGuidelines/cpp_core_guidelines_16b.png"/>
       <!--
       <h3>
         <!- -<a href="{{ site.baseurl }}">- ->
-        <a href="https://github.com/Marcusacapuces91/CppCoreGuidelines">
+        <a href="https://github.com/Marcussacapuces91/CppCoreGuidelines">
            Lignes Directrices Essentielles de C++
         </a>
       </h3>
@@ -65,3 +68,21 @@
     <!-- <p>Generated {{ site.time | date: '%Y-%m-%d' }}.</p> -->
   </div>
 </div>
+
+<style>
+  .fork-me {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    display: block;
+    pointer-events: auto;
+  }
+
+  .fork-me img {
+    display: block;
+    border: 0;
+    width: auto;
+    height: auto;
+  }
+</style>
